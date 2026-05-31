@@ -4,123 +4,75 @@
 export default {
   ingredients: [
     // ==================== 肉类 ====================
-    { id: 'chicken_breast', nameZh: '鸡胸肉', nameEn: 'Chicken Breast', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 8.50, product: 'Coles RSPCA Chicken Breast' },
-        { brand: 'woolies', price: 9.00, product: 'Woolworths Chicken Breast' },
-        { brand: 'aldi', price: 7.90, product: 'Aldi Chicken Breast' },
-      ],
-      searchTips: 'Poultry section, near deli' },
-    { id: 'chicken_thigh', nameZh: '鸡腿肉', nameEn: 'Chicken Thigh', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 7.00, product: 'Coles Chicken Thigh Fillet' },
-        { brand: 'woolies', price: 6.00, product: 'Woolworths Chicken Thigh Fillet', onSpecial: true, originalPrice: 9.00, specialLabel: '半价' },
-        { brand: 'aldi', price: 6.50, product: 'Aldi Chicken Thigh' },
-      ],
-      searchTips: 'Boneless thigh fillet, poultry section' },
-    { id: 'chicken_wing', nameZh: '鸡翅', nameEn: 'Chicken Wings', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 5.50, product: 'Coles Chicken Wings' },
-        { brand: 'woolies', price: 5.00, product: 'Woolies Chicken Wings' },
-        { brand: 'aldi', price: 4.99, product: 'Aldi Chicken Wings' },
-      ],
-      searchTips: 'Poultry section, usually bottom shelf' },
+    
+    
+    
     { id: 'minced_pork', nameZh: '猪肉末', nameEn: 'Pork Mince', category: 'meat', unit: '500g',
       stores: [
         { brand: 'coles', price: 6.00, product: 'Coles Pork Mince' },
         { brand: 'woolies', price: 5.50, product: 'Woolies Pork Mince' },
-        { brand: 'aldi', price: 4.99, product: 'Aldi Pork Mince' },
+        { brand: 'aldi', price: 4.99, product: 'Aldi Pork Mince' }
       ],
       searchTips: 'Pork section, look for "Mince"' },
-    { id: 'pork_belly', nameZh: '五花肉', nameEn: 'Pork Belly', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 12.00, product: 'Coles Pork Belly' },
-        { brand: 'woolies', price: 11.00, product: 'Woolies Pork Belly' },
-        { brand: 'aldi', price: 9.99, product: 'Aldi Pork Belly' },
-      ],
-      searchTips: 'Pork section, may need to ask butcher' },
+    
     { id: 'beef_stir_fry', nameZh: '牛肉片', nameEn: 'Beef Stir Fry', category: 'meat', unit: '500g',
       stores: [
         { brand: 'coles', price: 10.00, product: 'Coles Beef Stir Fry' },
         { brand: 'woolies', price: 10.50, product: 'Woolies Beef Stir Fry' },
-        { brand: 'aldi', price: 8.99, product: 'Aldi Beef Stir Fry' },
+        { brand: 'aldi', price: 8.99, product: 'Aldi Beef Stir Fry' }
       ],
       searchTips: 'Pre-sliced beef, look for "Stir Fry" label' },
-    { id: 'salmon_fillet', nameZh: '三文鱼', nameEn: 'Salmon Fillet', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 22.00, product: 'Coles Salmon Fillet' },
-        { brand: 'woolies', price: 16.00, product: 'Woolworths Salmon Fillet', onSpecial: true, originalPrice: 22.00, specialLabel: '半价' },
-        { brand: 'aldi', price: 18.99, product: 'Aldi Salmon Fillet' },
-      ],
-      searchTips: 'Seafood section, fresh or frozen' },
-    { id: 'prawn', nameZh: '虾仁', nameEn: 'Prawns (peeled)', category: 'meat', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 18.00, product: 'Coles Cooked Prawns' },
-        { brand: 'woolies', price: 16.00, product: 'Woolies Prawns' },
-        { brand: 'aldi', price: 14.99, product: 'Aldi Prawns' },
-      ],
-      searchTips: 'Seafood/frozen section, look for peeled & deveined' },
-    { id: 'sausage', nameZh: '香肠', nameEn: 'Sausages', category: 'meat', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 5.00, product: 'Coles Sausages' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Sausages' },
-        { brand: 'aldi', price: 3.99, product: 'Aldi Sausages' },
-      ],
-      searchTips: 'Meat section, many varieties available' },
-    { id: 'bacon', nameZh: '培根', nameEn: 'Bacon', category: 'meat', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 6.50, product: 'Coles Bacon' },
-        { brand: 'woolies', price: 6.00, product: 'Woolies Bacon' },
-        { brand: 'aldi', price: 4.99, product: 'Aldi Bacon' },
-      ],
-      searchTips: 'Deli section, near ham and cold cuts' },
+    
+    
+    
+    
     { id: 'smoked_pork_knuckle', nameZh: '烟熏猪肘', nameEn: 'Smoked Pork Hock', category: 'meat', unit: 'kg',
       stores: [
         { brand: 'coles', price: 14.00, product: 'Coles Smoked Pork Hock' },
         { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
-        { brand: 'aldi', price: 12.00, product: 'Aldi Smoked Pork Hock' },
+        { brand: 'aldi', price: 12.00, product: 'Aldi Smoked Pork Hock' }
       ],
       searchTips: 'Meat/Deli section, 找 "Smoked Pork Hock"，烟熏味，适合凉拌卤制' },
     { id: 'pork_hock', nameZh: '猪肘（大）', nameEn: 'Pork Hock / Ham Hock', category: 'meat', unit: 'each',
       stores: [
         { brand: 'coles', price: 10.00, product: 'Coles Pork Hock' },
         { brand: 'woolies', price: 8.00, product: 'Woolworths Pork Hock' },
-        { brand: 'aldi', price: 7.99, product: 'Aldi Pork Hock' },
+        { brand: 'aldi', price: 7.99, product: 'Aldi Pork Hock' }
       ],
       searchTips: 'Meat section, 找 "Pork Hock" 或 "Ham Hock"，Woolies的个头大' },
     { id: 'oxtail', nameZh: '牛尾骨', nameEn: 'Oxtail', category: 'meat', unit: 'kg',
       stores: [
         { brand: 'coles', price: 12.00, product: 'Coles Oxtail' },
         { brand: 'woolies', price: 13.00, product: 'Woolies Oxtail' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Meat/frozen section, Coles冷冻区常有，性价比极高' },
     { id: 'roast_chicken', nameZh: '烤鸡', nameEn: 'Whole Roast Chicken', category: 'meat', unit: 'each',
       stores: [
         { brand: 'coles', price: 11.00, product: 'Coles Hot Roast Chicken' },
         { brand: 'woolies', price: 11.00, product: 'Woolies Hot Roast Chicken' },
-        { brand: 'aldi', price: 9.99, product: 'Aldi Hot Roast Chicken' },
+        { brand: 'aldi', price: 9.99, product: 'Aldi Hot Roast Chicken' }
       ],
       searchTips: 'Deli入口处，热的直接撕着吃' },
     { id: 'peri_peri_chicken', nameZh: 'Peri-Peri烤鸡', nameEn: 'Coles Peri-Peri Roast Chicken', category: 'meat', unit: 'each',
       stores: [
         { brand: 'coles', price: 12.82, product: 'Coles Peri-Peri Roast Chicken' },
         { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Coles deli区冷柜，找 "Peri-Peri" 包装，微辣香料味' },
     { id: 'bread_roll', nameZh: '面包卷', nameEn: 'Bread Rolls / Burger Buns', category: 'bakery', unit: 'pack',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Bread Rolls' },
         { brand: 'woolies', price: 3.00, product: 'Woolies Bread Rolls' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Bread Rolls' },
+        { brand: 'aldi', price: 2.49, product: 'Aldi Bread Rolls' }
       ],
       searchTips: 'Bakery aisle, 芝麻面包卷或汉堡胚' },
     { id: 'cooked_pork_belly', nameZh: '熟五花肉', nameEn: 'Cooked Pork Belly', category: 'meat', unit: 'pack',
       stores: [
         { brand: 'coles', price: 8.00, product: 'Coles Cooked Pork Belly' },
         { brand: 'woolies', price: 9.00, product: 'Woolies Cooked Pork Belly' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Deli区，找 "Cooked Pork Belly"，已经卤好的，直接切片或爆炒' },
 
@@ -129,126 +81,96 @@ export default {
       stores: [
         { brand: 'coles', price: 4.90, product: 'Coles Tomatoes' },
         { brand: 'woolies', price: 3.50, product: 'Woolies Truss Tomatoes 250g', onSpecial: true, originalPrice: 5.90, specialLabel: '半价' },
-        { brand: 'aldi', price: 3.99, product: 'Aldi Tomatoes' },
+        { brand: 'aldi', price: 3.99, product: 'Aldi Tomatoes' }
       ],
       searchTips: 'Fresh produce section' },
-    { id: 'broccoli', nameZh: '西兰花', nameEn: 'Broccoli', category: 'veggie', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Broccoli' },
-        { brand: 'woolies', price: 3.00, product: 'Woolies Broccoli' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Broccoli' },
-      ],
-      searchTips: 'Fresh produce, green vegetables area' },
+    
     { id: 'potato', nameZh: '土豆', nameEn: 'Potato', category: 'veggie', unit: 'kg',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Potatoes' },
         { brand: 'woolies', price: 2.20, product: 'Woolies Potatoes' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Potatoes' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Potatoes' }
       ],
       searchTips: 'Root vegetables section' },
     { id: 'onion', nameZh: '洋葱', nameEn: 'Onion', category: 'veggie', unit: 'kg',
       stores: [
         { brand: 'coles', price: 2.00, product: 'Coles Brown Onion' },
         { brand: 'woolies', price: 1.80, product: 'Woolies Brown Onion' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Brown Onion' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Brown Onion' }
       ],
       searchTips: 'Root vegetables, near potatoes' },
     { id: 'garlic', nameZh: '大蒜', nameEn: 'Garlic', category: 'veggie', unit: 'pack',
       stores: [
         { brand: 'coles', price: 1.50, product: 'Coles Garlic' },
         { brand: 'woolies', price: 1.50, product: 'Woolies Garlic' },
-        { brand: 'aldi', price: 1.29, product: 'Aldi Garlic' },
+        { brand: 'aldi', price: 1.29, product: 'Aldi Garlic' }
       ],
       searchTips: 'Near onions, or pre-packed garlic' },
     { id: 'ginger', nameZh: '生姜', nameEn: 'Ginger', category: 'veggie', unit: '200g',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Ginger' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Ginger' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Ginger' },
+        { brand: 'aldi', price: 2.49, product: 'Aldi Ginger' }
       ],
       searchTips: 'Near garlic and herbs' },
     { id: 'spring_onion', nameZh: '葱', nameEn: 'Spring Onion', category: 'veggie', unit: 'bunch',
       stores: [
         { brand: 'coles', price: 2.00, product: 'Coles Spring Onion' },
         { brand: 'woolies', price: 1.80, product: 'Woolies Spring Onion' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Spring Onion' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Spring Onion' }
       ],
       searchTips: 'Fresh herbs section' },
-    { id: 'cabbage', nameZh: '白菜', nameEn: 'Cabbage / Wombok', category: 'veggie', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 4.00, product: 'Coles Wombok' },
-        { brand: 'woolies', price: 3.50, product: 'Woolies Wombok' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Wombok' },
-      ],
-      searchTips: 'Look for "Wombok" in Asian veggie section' },
+    
     { id: 'carrot', nameZh: '胡萝卜', nameEn: 'Carrot', category: 'veggie', unit: 'kg',
       stores: [
         { brand: 'coles', price: 1.80, product: 'Coles Carrots' },
         { brand: 'woolies', price: 1.60, product: 'Woolies Carrots' },
-        { brand: 'aldi', price: 1.29, product: 'Aldi Carrots' },
+        { brand: 'aldi', price: 1.29, product: 'Aldi Carrots' }
       ],
       searchTips: 'Root vegetables section' },
     { id: 'capsicum', nameZh: '彩椒', nameEn: 'Capsicum', category: 'veggie', unit: 'each',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Capsicum' },
         { brand: 'woolies', price: 2.00, product: 'Woolies Capsicum' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Capsicum' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Capsicum' }
       ],
       searchTips: 'Fresh produce, near tomatoes' },
-    { id: 'mushroom', nameZh: '蘑菇', nameEn: 'Mushroom', category: 'veggie', unit: '250g',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Button Mushrooms' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Mushrooms' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Mushrooms' },
-      ],
-      searchTips: 'Fresh produce, packaged or loose' },
+    
     { id: 'bok_choy', nameZh: '小白菜', nameEn: 'Bok Choy', category: 'veggie', unit: 'bunch',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Bok Choy' },
         { brand: 'woolies', price: 2.50, product: 'Woolies Bok Choy' },
-        { brand: 'aldi', price: 2.29, product: 'Aldi Bok Choy' },
+        { brand: 'aldi', price: 2.29, product: 'Aldi Bok Choy' }
       ],
       searchTips: 'Asian vegetables section' },
-    { id: 'zucchini', nameZh: '西葫芦', nameEn: 'Zucchini', category: 'veggie', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 2.00, product: 'Coles Zucchini' },
-        { brand: 'woolies', price: 1.80, product: 'Woolies Zucchini' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Zucchini' },
-      ],
-      searchTips: 'Fresh produce, green vegetables' },
-    { id: 'spinach', nameZh: '菠菜', nameEn: 'Baby Spinach', category: 'veggie', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Baby Spinach' },
-        { brand: 'woolies', price: 3.00, product: 'Woolies Baby Spinach' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Baby Spinach' },
-      ],
-      searchTips: 'Pre-washed salad section' },
+    
+    
     { id: 'cucumber', nameZh: '黄瓜', nameEn: 'Cucumber', category: 'veggie', unit: 'each',
       stores: [
         { brand: 'coles', price: 2.00, product: 'Coles Cucumber' },
         { brand: 'woolies', price: 1.80, product: 'Woolies Cucumber' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Cucumber' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Cucumber' }
       ],
       searchTips: 'Fresh produce section, 凉拌必备' },
     { id: 'bean_sprout', nameZh: '豆芽', nameEn: 'Bean Sprouts', category: 'veggie', unit: 'pack',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Bean Sprouts' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Bean Sprouts' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Asian vegetable section, 凉拌炒菜都可以' },
     { id: 'fungus', nameZh: '木耳', nameEn: 'Wood Ear Mushroom', category: 'veggie', unit: 'pack',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Dried Fungus' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Dried Fungus' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International aisle, 干货区，泡发后使用' },
     { id: 'peanut', nameZh: '花生米', nameEn: 'Peanuts', category: 'pantry', unit: '200g',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Roasted Peanuts' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Peanuts' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Peanuts' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Peanuts' }
       ],
       searchTips: 'Snack/nuts aisle, 凉菜点睛之笔' },
 
@@ -257,494 +179,260 @@ export default {
       stores: [
         { brand: 'coles', price: 4.50, product: 'Coles Free Range Eggs' },
         { brand: 'woolies', price: 4.20, product: 'Woolies Free Range Eggs' },
-        { brand: 'aldi', price: 3.99, product: 'Aldi Free Range Eggs' },
+        { brand: 'aldi', price: 3.99, product: 'Aldi Free Range Eggs' }
       ],
       searchTips: 'Dairy section, eggs are usually on an end cap' },
-    { id: 'milk', nameZh: '牛奶', nameEn: 'Full Cream Milk', category: 'dairy', unit: '2L',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Full Cream Milk' },
-        { brand: 'woolies', price: 3.30, product: 'Woolies Full Cream Milk' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Full Cream Milk' },
-      ],
-      searchTips: 'Dairy section, long-life milk in pantry aisle' },
-    { id: 'butter', nameZh: '黄油', nameEn: 'Butter', category: 'dairy', unit: '250g',
-      stores: [
-        { brand: 'coles', price: 3.80, product: 'Coles Butter' },
-        { brand: 'woolies', price: 3.50, product: 'Woolies Butter' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Butter' },
-      ],
-      searchTips: 'Dairy section, near cheese' },
-    { id: 'cheese', nameZh: '奶酪/芝士', nameEn: 'Tasty Cheese', category: 'dairy', unit: '250g',
-      stores: [
-        { brand: 'coles', price: 5.00, product: 'Coles Tasty Cheese' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Tasty Cheese' },
-        { brand: 'aldi', price: 3.99, product: 'Aldi Tasty Cheese' },
-      ],
-      searchTips: 'Dairy section, many varieties available' },
-    { id: 'cream', nameZh: '淡奶油', nameEn: 'Thickened Cream', category: 'dairy', unit: '300ml',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Thickened Cream' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Thickened Cream' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Thickened Cream' },
-      ],
-      searchTips: 'Dairy section, near long-life milk' },
-    { id: 'yoghurt', nameZh: '酸奶', nameEn: 'Greek Yoghurt', category: 'dairy', unit: '500g',
-      stores: [
-        { brand: 'coles', price: 4.00, product: 'Coles Greek Yoghurt' },
-        { brand: 'woolies', price: 3.50, product: 'Woolies Greek Yoghurt' },
-        { brand: 'aldi', price: 3.29, product: 'Aldi Greek Yoghurt' },
-      ],
-      searchTips: 'Dairy section, near milk' },
+    
+    
+    
+    
+    
 
     // ==================== 调味/干货 ====================
     { id: 'soy_sauce', nameZh: '生抽', nameEn: 'Soy Sauce', category: 'pantry', unit: '250ml',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Soy Sauce' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Soy Sauce' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Soy Sauce' },
+        { brand: 'aldi', price: 2.49, product: 'Aldi Soy Sauce' }
       ],
       searchTips: 'International/Aisan food aisle, look for Kikkoman' },
     { id: 'oyster_sauce', nameZh: '蚝油', nameEn: 'Oyster Sauce', category: 'pantry', unit: '250ml',
       stores: [
         { brand: 'coles', price: 3.50, product: 'Coles Oyster Sauce' },
         { brand: 'woolies', price: 3.20, product: 'Woolies Oyster Sauce' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International aisle, look for Lee Kum Kee' },
     { id: 'salt', nameZh: '盐', nameEn: 'Salt', category: 'pantry', unit: '750g',
       stores: [
         { brand: 'coles', price: 1.20, product: 'Coles Salt' },
         { brand: 'woolies', price: 1.10, product: 'Woolies Salt' },
-        { brand: 'aldi', price: 0.99, product: 'Aldi Salt' },
+        { brand: 'aldi', price: 0.99, product: 'Aldi Salt' }
       ],
       searchTips: 'Baking/pantry aisle' },
     { id: 'sugar', nameZh: '白砂糖', nameEn: 'White Sugar', category: 'pantry', unit: '1kg',
       stores: [
         { brand: 'coles', price: 1.80, product: 'Coles White Sugar' },
         { brand: 'woolies', price: 1.70, product: 'Woolies White Sugar' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi White Sugar' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi White Sugar' }
       ],
       searchTips: 'Baking aisle' },
     { id: 'cooking_oil', nameZh: '食用油', nameEn: 'Vegetable Oil', category: 'pantry', unit: '1L',
       stores: [
         { brand: 'coles', price: 3.50, product: 'Coles Vegetable Oil' },
         { brand: 'woolies', price: 3.20, product: 'Woolies Vegetable Oil' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Vegetable Oil' },
+        { brand: 'aldi', price: 2.99, product: 'Aldi Vegetable Oil' }
       ],
       searchTips: 'Cooking oil aisle' },
-    { id: 'olive_oil', nameZh: '橄榄油', nameEn: 'Extra Virgin Olive Oil', category: 'pantry', unit: '1L',
-      stores: [
-        { brand: 'coles', price: 13.00, product: 'La Espanola Extra Virgin Olive Oil', onSpecial: true, originalPrice: 26.00, specialLabel: '半价' },
-        { brand: 'woolies', price: 14.00, product: 'Woolies Extra Virgin Olive Oil' },
-        { brand: 'aldi', price: 9.99, product: 'Aldi Olive Oil' },
-      ],
-      searchTips: 'Cooking oil aisle, La Espanola 牌子很常见' },
+    
     { id: 'sesame_oil', nameZh: '芝麻油', nameEn: 'Sesame Oil', category: 'pantry', unit: '150ml',
       stores: [
         { brand: 'coles', price: 3.80, product: 'Coles Sesame Oil' },
         { brand: 'woolies', price: 3.50, product: 'Woolies Sesame Oil' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International aisle, essential for Chinese cooking' },
     { id: 'vinegar', nameZh: '醋', nameEn: 'White Vinegar', category: 'pantry', unit: '750ml',
       stores: [
         { brand: 'coles', price: 1.50, product: 'Coles White Vinegar' },
         { brand: 'woolies', price: 1.40, product: 'Woolies White Vinegar' },
-        { brand: 'aldi', price: 1.19, product: 'Aldi White Vinegar' },
+        { brand: 'aldi', price: 1.19, product: 'Aldi White Vinegar' }
       ],
       searchTips: 'Condiments aisle' },
-    { id: 'chili_sauce', nameZh: '辣椒酱', nameEn: 'Chili Sauce', category: 'pantry', unit: '250ml',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Sweet Chili Sauce' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Sweet Chili Sauce' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Sweet Chili Sauce' },
-      ],
-      searchTips: 'International or condiments aisle' },
-    { id: 'curry_powder', nameZh: '咖喱粉', nameEn: 'Curry Powder', category: 'pantry', unit: '80g',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles Curry Powder' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies Curry Powder' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Curry Powder' },
-      ],
-      searchTips: 'Spices aisle' },
-    { id: 'chicken_stock', nameZh: '鸡汤块', nameEn: 'Chicken Stock', category: 'pantry', unit: '1L',
-      stores: [
-        { brand: 'coles', price: 2.25, product: "Campbell's Real Stock Chicken 1L", onSpecial: true, originalPrice: 4.50, specialLabel: '半价' },
-        { brand: 'woolies', price: 1.30, product: 'Woolies Chicken Stock' },
-        { brand: 'aldi', price: 0.99, product: 'Aldi Chicken Stock' },
-      ],
-      searchTips: 'Soup/pasta aisle, liquid or powder' },
+    
+    
+    
 
     // ==================== 主食 ====================
     { id: 'rice', nameZh: '大米', nameEn: 'Jasmine Rice', category: 'pantry', unit: '5kg',
       stores: [
         { brand: 'coles', price: 13.50, product: 'Sunrice Jasmine White Rice', onSpecial: true, originalPrice: 27.00, specialLabel: '半价' },
         { brand: 'woolies', price: 7.50, product: 'Woolies Jasmine Rice' },
-        { brand: 'aldi', price: 6.99, product: 'Aldi Jasmine Rice' },
+        { brand: 'aldi', price: 6.99, product: 'Aldi Jasmine Rice' }
       ],
       searchTips: 'Rice/grains aisle, look for Jasmine Rice' },
     { id: 'noodle', nameZh: '面条', nameEn: 'Noodles', category: 'pantry', unit: '500g',
       stores: [
         { brand: 'coles', price: 2.00, product: 'Coles Noodles' },
         { brand: 'woolies', price: 1.80, product: 'Woolies Noodles' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Noodles' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Noodles' }
       ],
       searchTips: 'Pasta/international aisle' },
-    { id: 'instant_noodle', nameZh: '方便面', nameEn: 'Instant Noodles', category: 'pantry', unit: '5-pack',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Instant Noodles' },
-        { brand: 'woolies', price: 3.20, product: 'Woolies Instant Noodles' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Instant Noodles' },
-      ],
-      searchTips: 'International aisle or snack section' },
-    { id: 'bread', nameZh: '面包', nameEn: 'Bread', category: 'bakery', unit: 'loaf',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles White Bread' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies White Bread' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi White Bread' },
-      ],
-      searchTips: 'Bakery section at store entrance' },
-    { id: 'tortilla', nameZh: '卷饼皮', nameEn: 'Tortilla Wraps', category: 'bakery', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Tortilla Wraps' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Tortilla Wraps' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Tortilla Wraps' },
-      ],
-      searchTips: 'Bakery or international aisle' },
+    
+    
+    
 
     // ==================== 水果 ====================
-    { id: 'avocado', nameZh: '牛油果', nameEn: 'Avocado', category: 'fruit', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 2.00, product: 'Coles Avocado' },
-        { brand: 'woolies', price: 1.80, product: 'Woolies Avocado' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Avocado' },
-      ],
-      searchTips: 'Fresh produce, near tomatoes' },
-    { id: 'banana', nameZh: '香蕉', nameEn: 'Banana', category: 'fruit', unit: 'kg',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Bananas' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Bananas' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Bananas' },
-      ],
-      searchTips: 'Fresh produce section' },
-    { id: 'lemon', nameZh: '柠檬', nameEn: 'Lemon', category: 'fruit', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 1.00, product: 'Coles Lemon' },
-        { brand: 'woolies', price: 0.90, product: 'Woolies Lemon' },
-        { brand: 'aldi', price: 0.79, product: 'Aldi Lemon' },
-      ],
-      searchTips: 'Fresh produce, near limes' },
+    
+    
+    
 
     // ==================== 冷冻食品 ====================
-    { id: 'frozen_veggie', nameZh: '冷冻蔬菜', nameEn: 'Frozen Mixed Vegetables', category: 'frozen', unit: '1kg',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Frozen Mixed Veg' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Frozen Mixed Veg' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Frozen Mixed Veg' },
-      ],
-      searchTips: 'Frozen food aisle' },
-    { id: 'frozen_dumpling', nameZh: '冷冻水饺', nameEn: 'Frozen Dumplings', category: 'frozen', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 4.25, product: 'Golden Wok Dumplings 230g', onSpecial: true, originalPrice: 8.50, specialLabel: '半价' },
-        { brand: 'woolies', price: 5.50, product: 'Woolies Frozen Dumplings' },
-        { brand: 'aldi', price: 4.99, product: 'Aldi Frozen Dumplings' },
-      ],
-      searchTips: 'Frozen food aisle, Golden Wok 系列 Diana Chan 合作款' },
-    { id: 'fish_ball', nameZh: '鱼丸', nameEn: 'Fish Balls', category: 'frozen', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 5.00, product: 'Coles Fish Balls' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Fish Balls' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
-      ],
-      searchTips: 'International frozen section' },
+    
+    
+    
 
     // ==================== 零食/其他 ====================
-    { id: 'chocolate', nameZh: '巧克力', nameEn: 'Chocolate', category: 'snack', unit: 'block',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Chocolate' },
-        { brand: 'woolies', price: 3.20, product: 'Woolies Chocolate' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Choceur Chocolate' },
-      ],
-      searchTips: 'Confectionery aisle' },
-    { id: 'peanut_butter', nameZh: '花生酱', nameEn: 'Peanut Butter', category: 'snack', unit: '375g',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Peanut Butter' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Peanut Butter' },
-        { brand: 'aldi', price: 2.29, product: 'Aldi Peanut Butter' },
-      ],
-      searchTips: 'Spreads/jam aisle' },
-    { id: 'cola', nameZh: '可乐', nameEn: 'Coca-Cola', category: 'snack', unit: '1.25L',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coca-Cola' },
-        { brand: 'woolies', price: 2.30, product: 'Coca-Cola' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Cola' },
-      ],
-      searchTips: 'Soft drink aisle' },
+    
+    
+    
 
     // ==================== 火锅/聚餐食材 ====================
-    { id: 'hotpot_base', nameZh: '火锅底料', nameEn: 'Hotpot Soup Base', category: 'pantry', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 4.00, product: 'Coles Hotpot Base' },
-        { brand: 'woolies', price: 3.50, product: 'Woolies Hotpot Base' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
-      ],
-      searchTips: 'International aisle, Asian food section' },
-    { id: 'tofu', nameZh: '豆腐', nameEn: 'Firm Tofu', category: 'veggie', unit: 'block',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles Firm Tofu' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies Firm Tofu' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Firm Tofu' },
-      ],
-      searchTips: 'International aisle, refrigerated section' },
-    { id: 'corn', nameZh: '玉米', nameEn: 'Corn Cob', category: 'veggie', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 1.50, product: 'Coles Corn Cob' },
-        { brand: 'woolies', price: 1.30, product: 'Woolies Corn Cob' },
-        { brand: 'aldi', price: 0.99, product: 'Aldi Corn Cob' },
-      ],
-      searchTips: 'Fresh produce section' },
-    { id: 'enoki_mushroom', nameZh: '金针菇', nameEn: 'Enoki Mushrooms', category: 'veggie', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 3.00, product: 'Coles Enoki Mushrooms' },
-        { brand: 'woolies', price: 2.80, product: 'Woolies Enoki' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
-      ],
-      searchTips: 'Asian vegetable section, small pack' },
+    
+    
+    
+    
 
     // ==================== 特殊食材（菜谱用） ====================
-    { id: 'flour', nameZh: '面粉', nameEn: 'Plain Flour', category: 'pantry', unit: '1kg',
-      stores: [
-        { brand: 'coles', price: 1.50, product: 'Coles Plain Flour' },
-        { brand: 'woolies', price: 1.40, product: 'Woolies Plain Flour' },
-        { brand: 'aldi', price: 1.19, product: 'Aldi Plain Flour' },
-      ],
-      searchTips: 'Baking aisle' },
-    { id: 'cocoa_powder', nameZh: '可可粉', nameEn: 'Cocoa Powder', category: 'pantry', unit: '250g',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Cocoa Powder' },
-        { brand: 'woolies', price: 3.20, product: 'Woolies Cocoa Powder' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Cocoa Powder' },
-      ],
-      searchTips: 'Baking aisle' },
-    { id: 'honey', nameZh: '蜂蜜', nameEn: 'Honey', category: 'pantry', unit: '375g',
-      stores: [
-        { brand: 'coles', price: 4.50, product: 'Coles Honey' },
-        { brand: 'woolies', price: 4.00, product: 'Woolies Honey' },
-        { brand: 'aldi', price: 3.49, product: 'Aldi Honey' },
-      ],
-      searchTips: 'Spreads/jam aisle' },
-    { id: 'teriyaki_sauce', nameZh: '照烧酱', nameEn: 'Teriyaki Sauce', category: 'pantry', unit: '250ml',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Teriyaki Marinade' },
-        { brand: 'woolies', price: 3.20, product: 'Woolies Teriyaki Sauce' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Teriyaki Marinade' },
-      ],
-      searchTips: 'International or marinade aisle' },
-    { id: 'curry_block', nameZh: '咖喱块', nameEn: 'Curry Roux Block', category: 'pantry', unit: 'box',
-      stores: [
-        { brand: 'coles', price: 5.00, product: 'Coles Curry Simmer Sauce' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Curry Sauce' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
-      ],
-      searchTips: 'International aisle, look for Japanese curry (Golden Curry brand)' },
-    { id: 'oat', nameZh: '燕麦', nameEn: 'Rolled Oats', category: 'pantry', unit: '500g',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles Rolled Oats' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies Rolled Oats' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Rolled Oats' },
-      ],
-      searchTips: 'Cereal/breakfast aisle' },
-    { id: 'mayonnaise', nameZh: '蛋黄酱', nameEn: 'Mayonnaise', category: 'pantry', unit: '400g',
-      stores: [
-        { brand: 'coles', price: 3.50, product: 'Coles Mayonnaise' },
-        { brand: 'woolies', price: 3.20, product: 'Woolies Mayonnaise' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Mayonnaise' },
-      ],
-      searchTips: 'Condiments aisle' },
-    { id: 'black_pepper', nameZh: '黑胡椒', nameEn: 'Black Pepper', category: 'pantry', unit: '30g',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles Black Pepper' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies Black Pepper' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Black Pepper' },
-      ],
-      searchTips: 'Spices aisle' },
-    { id: 'cornstarch', nameZh: '玉米淀粉', nameEn: 'Cornflour', category: 'pantry', unit: '300g',
-      stores: [
-        { brand: 'coles', price: 1.80, product: 'Coles Cornflour' },
-        { brand: 'woolies', price: 1.60, product: 'Woolies Cornflour' },
-        { brand: 'aldi', price: 1.29, product: 'Aldi Cornflour' },
-      ],
-      searchTips: 'Baking aisle, near flour' },
-    { id: 'garlic_clove', nameZh: '蒜瓣', nameEn: 'Garlic Clove', category: 'veggie', unit: 'each',
-      stores: [
-        { brand: 'coles', price: 0.30, product: 'Individual Garlic Clove' },
-        { brand: 'woolies', price: 0.25, product: 'Individual Garlic Clove' },
-        { brand: 'aldi', price: 0.20, product: 'Individual Garlic Clove' },
-      ],
-      searchTips: 'Usually use pre-packed garlic (see garlic entry)' },
-    { id: 'starch_noodle', nameZh: '粉丝', nameEn: 'Glass Noodles', category: 'pantry', unit: 'pack',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'Coles Vermicelli' },
-        { brand: 'woolies', price: 2.30, product: 'Woolies Vermicelli' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
-      ],
-      searchTips: 'International aisle, look for vermicelli' },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     { id: 'rice_wine', nameZh: '米酒', nameEn: 'Rice Wine / Shaoxing Wine', category: 'pantry', unit: '500ml',
       stores: [
         { brand: 'coles', price: 4.00, product: 'Coles Shaoxing Wine' },
         { brand: 'woolies', price: 3.50, product: 'Woolies Rice Wine' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Asian aisle, 去腥必备' },
     { id: 'dried_chili', nameZh: '干辣椒', nameEn: 'Dried Chili', category: 'pantry', unit: 'pack',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Dried Chilli' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Dried Chilli' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Spice aisle, 煮肉去腥增香' },
     { id: 'xiaomi_chili', nameZh: '小米辣', nameEn: 'Bird Eye Chili', category: 'veggie', unit: 'pack',
       stores: [
         { brand: 'coles', price: 3.50, product: 'Coles Bird Eye Chili' },
         { brand: 'woolies', price: 3.00, product: 'Woolies Bird Eye Chili' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Fresh produce / Asian veggie section, 凉拌炒菜提辣' },
     { id: 'frozen_okra', nameZh: '冷冻秋葵', nameEn: 'Frozen Okra', category: 'frozen', unit: '500g',
       stores: [
         { brand: 'coles', price: 4.00, product: 'Coles Frozen Okra' },
         { brand: 'woolies', price: 3.50, product: 'Woolies Frozen Okra' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Frozen food aisle, 炒蛋凉拌都好吃' },
     { id: 'frozen_wonton', nameZh: '冷冻云吞', nameEn: 'Frozen Wontons', category: 'frozen', unit: 'pack',
       stores: [
         { brand: 'coles', price: 6.00, product: 'Coles Frozen Wontons' },
         { brand: 'woolies', price: 5.50, product: 'Woolies Prawn & Pork Wontons' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Frozen food aisle, Woolies鲜虾猪肉云吞最好吃' },
     { id: 'wide_noodle', nameZh: '宽面条', nameEn: 'Wide Noodles / Udon', category: 'pantry', unit: 'pack',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Udon Noodles' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Udon Noodles' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Udon Noodles' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Udon Noodles' }
       ],
       searchTips: 'International aisle or fridge section, 乌冬面或宽挂面' },
     { id: 'peri_peri_sauce', nameZh: 'Peri-Peri酱', nameEn: 'Peri-Peri Sauce', category: 'pantry', unit: '250ml',
       stores: [
         { brand: 'coles', price: 4.00, product: 'Nandos Peri-Peri Sauce' },
         { brand: 'woolies', price: 3.80, product: 'Woolies Peri-Peri Sauce' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Peri-Peri Style Sauce' },
+        { brand: 'aldi', price: 2.99, product: 'Aldi Peri-Peri Style Sauce' }
       ],
       searchTips: 'Condiments/Sauce aisle, Nandos品牌最正宗' },
     { id: 'chili_oil', nameZh: '辣椒油', nameEn: 'Chili Oil', category: 'pantry', unit: '250ml',
       stores: [
         { brand: 'coles', price: 3.50, product: 'Coles Chili Oil' },
         { brand: 'woolies', price: 3.20, product: 'Woolies Chili Oil' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International aisle, 红油凉拌抄手必备' },
     { id: 'sesame_paste', nameZh: '芝麻酱', nameEn: 'Sesame Paste / Tahini', category: 'pantry', unit: '250g',
       stores: [
         { brand: 'coles', price: 4.00, product: 'Coles Sesame Paste' },
         { brand: 'woolies', price: 3.80, product: 'Woolies Tahini' },
-        { brand: 'aldi', price: 2.99, product: 'Aldi Tahini' },
+        { brand: 'aldi', price: 2.99, product: 'Aldi Tahini' }
       ],
       searchTips: 'International aisle, 找芝麻酱或用Tahini代替' },
     { id: 'sichuan_pepper_oil', nameZh: '花椒油', nameEn: 'Sichuan Pepper Oil', category: 'pantry', unit: '150ml',
       stores: [
         { brand: 'coles', price: 4.50, product: 'Coles Sichuan Pepper Oil' },
         { brand: 'woolies', price: 4.00, product: 'Woolies Sichuan Pepper Oil' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Asian aisle, 麻辣抄手灵魂调料' },
     { id: 'dark_soy_sauce', nameZh: '老抽', nameEn: 'Dark Soy Sauce', category: 'pantry', unit: '250ml',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Dark Soy Sauce' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Dark Soy Sauce' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Asian aisle, 找 "Dark Soy Sauce"，上色用' },
     { id: 'chili_powder', nameZh: '辣椒粉', nameEn: 'Chili Powder / Chili Flakes', category: 'pantry', unit: '100g',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Chili Flakes' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Chili Flakes' },
-        { brand: 'aldi', price: 1.99, product: 'Aldi Chili Flakes' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Chili Flakes' }
       ],
       searchTips: 'Spices aisle, 油泼面必备' },
     { id: 'doubanjiang', nameZh: '郫县豆瓣', nameEn: 'Doubanjiang / Chili Bean Paste', category: 'pantry', unit: '250g',
       stores: [
         { brand: 'coles', price: 4.50, product: 'Coles Chili Bean Paste' },
         { brand: 'woolies', price: 4.00, product: 'Woolies Chili Bean Paste' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Asian aisle, 湖南菜川菜灵魂调料' },
     { id: 'star_anise', nameZh: '八角', nameEn: 'Star Anise', category: 'pantry', unit: '50g',
       stores: [
         { brand: 'coles', price: 2.50, product: 'Coles Star Anise' },
         { brand: 'woolies', price: 2.30, product: 'Woolies Star Anise' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'Spices aisle, 炖肉去腥增香' },
     { id: 'bay_leaf', nameZh: '香叶', nameEn: 'Bay Leaves', category: 'pantry', unit: '10g',
       stores: [
         { brand: 'coles', price: 2.00, product: 'Coles Bay Leaves' },
         { brand: 'woolies', price: 1.80, product: 'Woolies Bay Leaves' },
-        { brand: 'aldi', price: 1.49, product: 'Aldi Bay Leaves' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Bay Leaves' }
       ],
       searchTips: 'Spices aisle, 炖肉煲汤提香' },
     { id: 'rock_sugar', nameZh: '冰糖', nameEn: 'Rock Sugar', category: 'pantry', unit: '200g',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Rock Sugar' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Rock Sugar' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: 'International/Asian aisle, 炖肉红烧上色提鲜' },
     { id: 'tomato_paste', nameZh: '番茄酱', nameEn: 'Tomato Paste', category: 'pantry', unit: '200g',
       stores: [
         { brand: 'coles', price: 1.50, product: 'Coles Tomato Paste' },
         { brand: 'woolies', price: 1.30, product: 'Woolies Tomato Paste' },
-        { brand: 'aldi', price: 0.99, product: 'Aldi Tomato Paste' },
+        { brand: 'aldi', price: 0.99, product: 'Aldi Tomato Paste' }
       ],
       searchTips: 'Pasta/sauce aisle, 炖肉增色增酸' },
     { id: 'leek', nameZh: '韭菜', nameEn: 'Leek / Chinese Chives', category: 'veggie', unit: 'bunch',
       stores: [
         { brand: 'coles', price: 3.00, product: 'Coles Leek' },
         { brand: 'woolies', price: 2.80, product: 'Woolies Leek' },
-        { brand: 'aldi', price: 2.49, product: 'Aldi Leek' },
+        { brand: 'aldi', price: 2.49, product: 'Aldi Leek' }
       ],
       searchTips: 'Fresh produce section, 亚超有中国韭菜更正宗' },
     { id: 'dried_porcini', nameZh: '干牛肝菌', nameEn: 'Dried Porcini Mushrooms', category: 'pantry', unit: '20g',
       stores: [
         { brand: 'coles', price: 0, product: 'Not commonly stocked' },
         { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
-        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' }
       ],
       searchTips: '亚超/华人超市干货区，约$4/袋，焖饭煲汤都鲜' },
 
     // ==================== 调酒/饮品食材 ====================
-    { id: 'coconut_water', nameZh: '椰子水', nameEn: 'Coconut Water', category: 'pantry', unit: '1L',
-      stores: [
-        { brand: 'coles', price: 2.75, product: 'Raw C Pure Natural Coconut Water 1L', onSpecial: true, originalPrice: 5.50, specialLabel: '半价' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Coconut Water' },
-        { brand: 'aldi', price: 3.49, product: 'Aldi Coconut Water' },
-      ],
-      searchTips: 'Drinks aisle, 做甜品调酒都好用' },
-    { id: 'soda_water', nameZh: '苏打水', nameEn: 'Soda Water', category: 'pantry', unit: '4pk',
-      stores: [
-        { brand: 'coles', price: 4.00, product: 'Schweppes Soda Water Glass 4x300ml', onSpecial: true, originalPrice: 8.00, specialLabel: '半价' },
-        { brand: 'woolies', price: 5.00, product: 'Woolies Soda Water' },
-        { brand: 'aldi', price: 3.99, product: 'Aldi Soda Water' },
-      ],
-      searchTips: 'Drinks/mixers aisle, 调酒必备' },
-    { id: 'frozen_cauliflower', nameZh: '冷冻花椰菜', nameEn: 'Frozen Cauliflower', category: 'frozen', unit: '500g',
-      stores: [
-        { brand: 'coles', price: 2.50, product: 'McCain Cauliflower 500g', onSpecial: true, originalPrice: 5.00, specialLabel: '半价' },
-        { brand: 'woolies', price: 4.00, product: 'Woolies Frozen Cauliflower' },
-        { brand: 'aldi', price: 3.49, product: 'Aldi Frozen Cauliflower' },
-      ],
-      searchTips: 'Frozen food aisle, 炒菜打泥都好用' },
+    
+    
+    
   ],
 
   // 快速查找表：按 id 索引
