@@ -102,6 +102,20 @@ export default {
         { brand: 'aldi', price: 9.99, product: 'Aldi Hot Roast Chicken' },
       ],
       searchTips: 'Deli入口处，热的直接撕着吃' },
+    { id: 'peri_peri_chicken', nameZh: 'Peri-Peri烤鸡', nameEn: 'Coles Peri-Peri Roast Chicken', category: 'meat', unit: 'each',
+      stores: [
+        { brand: 'coles', price: 12.82, product: 'Coles Peri-Peri Roast Chicken' },
+        { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'Coles deli区冷柜，找 "Peri-Peri" 包装，微辣香料味' },
+    { id: 'bread_roll', nameZh: '面包卷', nameEn: 'Bread Rolls / Burger Buns', category: 'bakery', unit: 'pack',
+      stores: [
+        { brand: 'coles', price: 3.00, product: 'Coles Bread Rolls' },
+        { brand: 'woolies', price: 3.00, product: 'Woolies Bread Rolls' },
+        { brand: 'aldi', price: 2.49, product: 'Aldi Bread Rolls' },
+      ],
+      searchTips: 'Bakery aisle, 芝麻面包卷或汉堡胚' },
     { id: 'cooked_pork_belly', nameZh: '熟五花肉', nameEn: 'Cooked Pork Belly', category: 'meat', unit: 'pack',
       stores: [
         { brand: 'coles', price: 8.00, product: 'Coles Cooked Pork Belly' },
