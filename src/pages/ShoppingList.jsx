@@ -132,7 +132,7 @@ export default function ShoppingList() {
               to="/specials"
               className="inline-block mt-2 text-xs text-primary font-semibold hover:underline"
             >
-              去特价页添加 →
+              去半价页添加 →
             </Link>
           </div>
         ) : (
@@ -222,13 +222,13 @@ export default function ShoppingList() {
           <div className="text-6xl mb-4">🛒</div>
           <h2 className="text-lg font-bold text-gray-600 mb-2">清单是空的</h2>
           <p className="text-sm text-gray-400 mb-6">
-            去本周特价页添加想买的商品吧
+            去本周半价页添加想买的商品吧
           </p>
           <Link
             to="/specials"
             className="inline-block bg-primary text-white font-bold px-6 py-3 rounded-xl hover:opacity-90 active:scale-95 transition-all no-underline"
           >
-            🔥 浏览本周特价
+            🔥 浏览本周半价
           </Link>
         </div>
       </div>
@@ -289,7 +289,7 @@ export default function ShoppingList() {
           to="/specials"
           className="inline-block text-sm text-primary font-semibold hover:underline no-underline"
         >
-          ← 继续浏览特价商品
+          ← 继续浏览半价商品
         </Link>
       </div>
     </div>

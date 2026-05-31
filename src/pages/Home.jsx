@@ -42,7 +42,7 @@ export default function Home() {
                 逛菜谱
               </Link>
               <Link to="/specials" className="bg-white/20 text-white border-2 border-white/40 font-bold px-6 py-3 rounded-xl hover:bg-white/30 active:scale-95 transition-all no-underline backdrop-blur-sm">
-                本周特价
+                本周半价
               </Link>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
               <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 text-center">
                 <div className="text-3xl sm:text-4xl mb-2">🔥</div>
-                <div className="text-sm font-bold">每周特价</div>
+                <div className="text-sm font-bold">每周半价</div>
                 <div className="text-xs text-white/70">比价省更多</div>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Home() {
               {s.name}
             </a>
           ))}
-          <span className="text-gray-400 text-xs ml-1 sm:ml-2">特价每周自动更新</span>
+          <span className="text-gray-400 text-xs ml-1 sm:ml-2">半价每周自动更新</span>
         </div>
       </section>
 
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
-              <h2 className="section-title">本周特价</h2>
+              <h2 className="section-title">本周半价</h2>
               <p className="section-subtitle">Coles & Woolworths 优惠速递</p>
             </div>
             <Link to="/specials" className="text-primary font-semibold text-sm hover:underline no-underline">

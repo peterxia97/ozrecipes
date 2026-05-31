@@ -175,7 +175,7 @@ export default function Specials() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 sm:py-10">
       {/* Header */}
-      <h1 className="section-title">🔥 本周特价</h1>
+      <h1 className="section-title">🔥 本周半价</h1>
       <p className="section-subtitle">
         数据更新至 {specialsData.currentPeriod.label} ·        共 {stats.total} 件商品（Coles {stats.coles} / Woolies {stats.woolies}）
       </p>
@@ -260,7 +260,7 @@ export default function Specials() {
       {/* Results count + page info */}
       <div ref={gridRef} className="flex items-center justify-between mb-5">
         <p className="text-sm text-gray-500">
-          共 <span className="text-primary font-bold">{filtered.length}</span> 件特价商品
+          共 <span className="text-primary font-bold">{filtered.length}</span> 件半价商品
           {totalPages > 1 && (
             <span className="ml-1 text-gray-400">
               · 第 {currentPage}/{totalPages} 页
@@ -273,7 +273,7 @@ export default function Specials() {
       {filtered.length === 0 ? (
         <div className="text-center py-16 text-gray-400">
           <div className="text-5xl mb-4">📭</div>
-          <p>该分类暂无特价商品</p>
+          <p>该分类暂无半价商品</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">

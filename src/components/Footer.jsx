@@ -23,7 +23,7 @@ export default function Footer() {
           <ul className="space-y-1">
             <li><Link to="/" className="hover:text-primary no-underline block py-2 text-gray-400">首页</Link></li>
             <li><Link to="/recipes" className="hover:text-primary no-underline block py-2 text-gray-400">全部菜谱</Link></li>
-            <li><Link to="/specials" className="hover:text-primary no-underline block py-2 text-gray-400">本周特价</Link></li>
+            <li><Link to="/specials" className="hover:text-primary no-underline block py-2 text-gray-400">本周半价</Link></li>
             <li><Link to="/shopping-list" className="hover:text-primary no-underline block py-2 text-gray-400">采购清单</Link></li>
           </ul>
         </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-4 text-xs leading-relaxed">
-            特价信息每周自动更新，以超市实际价格为准
+            半价信息每周自动更新，以超市实际价格为准
           </p>
         </div>
       </div>

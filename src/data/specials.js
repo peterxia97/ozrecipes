@@ -1,4 +1,4 @@
-// 每周特价数据：从 halfpriceau.com 抓取 Coles / Woolworths 半价商品
+// 每周半价数据：从 halfpriceau.com 抓取 Coles / Woolworths 半价商品
 // 更新方式：node scrape_halfpriceau.js && node convert_halfpriceau.js
 // 数据来源：https://www.halfpriceau.com/
 // 分类策略：API 原始分类 + 关键词智能修正（巧克力→零食、护发→健康美容等）

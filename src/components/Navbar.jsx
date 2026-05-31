@@ -5,7 +5,7 @@ import { useShoppingList } from '../contexts/ShoppingListContext';
 const links = [
   { to: '/',           label: '首页',    icon: '🏠' },
   { to: '/recipes',    label: '菜谱',    icon: '📖' },
-  { to: '/specials',   label: '特价',    icon: '🔥' },
+  { to: '/specials',   label: '半价',    icon: '🔥' },
   { to: '/shopping-list', label: '清单', icon: '🛒' },
 ];
 
