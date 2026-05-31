@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 text-sm mt-auto">
@@ -9,9 +11,9 @@ export default function Footer() {
             <span className="font-extrabold text-white text-lg">澳洲留子快手菜</span>
           </div>
           <p className="leading-relaxed">
-            用 Coles / Woolworths / Aldi 能买到的食材，
+            用 Coles · Woolworths · Aldi 能买到的食材，
             <br />
-            做简单好吃的留学生快手菜 🇦🇺
+            做简单好吃的留学生快手菜
           </p>
         </div>
 
@@ -19,16 +21,16 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-bold mb-3">快速导航</h4>
           <ul className="space-y-1">
-            <li><a href="/" className="hover:text-primary no-underline block py-2">首页</a></li>
-            <li><a href="/recipes" className="hover:text-primary no-underline block py-2">全部菜谱</a></li>
-            <li><a href="/specials" className="hover:text-primary no-underline block py-2">本周特价</a></li>
-            <li><a href="#" className="hover:text-primary no-underline block py-2 text-gray-500 cursor-not-allowed">🍸 调酒版块（即将上线）</a></li>
+            <li><Link to="/" className="hover:text-primary no-underline block py-2 text-gray-400">首页</Link></li>
+            <li><Link to="/recipes" className="hover:text-primary no-underline block py-2 text-gray-400">全部菜谱</Link></li>
+            <li><Link to="/specials" className="hover:text-primary no-underline block py-2 text-gray-400">本周特价</Link></li>
+            <li><Link to="/shopping-list" className="hover:text-primary no-underline block py-2 text-gray-400">采购清单</Link></li>
           </ul>
         </div>
 
         {/* Supermarket Links */}
         <div>
-          <h4 className="text-white font-bold mb-3">合作超市</h4>
+          <h4 className="text-white font-bold mb-3">数据来源</h4>
           <div className="flex flex-wrap gap-2">
             {[
               { name: 'Coles',       color: 'bg-[#E31E24]', url: 'https://www.coles.com.au' },
@@ -47,7 +49,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-4 text-xs leading-relaxed">
-            💡 特价信息每周手动更新，以超市实际价格为准
+            特价信息每周自动更新，以超市实际价格为准
           </p>
         </div>
       </div>

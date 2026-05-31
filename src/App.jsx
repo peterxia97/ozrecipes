@@ -4,6 +4,7 @@ import Recipes from './pages/Recipes';
 import RecipeDetail from './pages/RecipeDetail';
 import Specials from './pages/Specials';
 import ShoppingList from './pages/ShoppingList';
+import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { ShoppingListProvider } from './contexts/ShoppingListContext';
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/recipes/:id" element={<RecipeDetail />} />
             <Route path="/specials" element={<Specials />} />
             <Route path="/shopping-list" element={<ShoppingList />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

@@ -354,16 +354,16 @@ export default function Specials() {
                   </button>
                 )}
 
-                {/* Add to shopping list */}
+                {/* Add to shopping list — more prominent */}
                 <button
                   onClick={() => addItem(s)}
-                  className={`mt-1 w-full text-[10px] sm:text-xs font-semibold px-2 py-1.5 rounded-lg active:scale-95 transition-all ${
+                  className={`mt-1 w-full text-[10px] sm:text-xs font-bold px-2 py-2 rounded-lg active:scale-95 transition-all ${
                     isInList(s.id)
-                      ? 'bg-green-100 text-green-700 border border-green-300'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200'
+                      ? 'bg-green-500 text-white'
+                      : 'bg-secondary text-white hover:opacity-90'
                   }`}
                 >
-                  {isInList(s.id) ? '✅ 已加清单' : '🛒 加入清单'}
+                  {isInList(s.id) ? '✅ 已加清单' : '+ 加入清单'}
                 </button>
 
                 {/* Category link to browse more */}
@@ -484,11 +484,11 @@ export default function Specials() {
                 onClick={() => addItem(selectedProduct)}
                 className={`mt-4 block text-center w-full font-bold py-3 rounded-xl hover:opacity-90 transition ${
                   isInList(selectedProduct.id)
-                    ? 'bg-green-100 text-green-700 border-2 border-green-300'
+                    ? 'bg-green-500 text-white'
                     : 'bg-secondary text-white'
                 }`}
               >
-                {isInList(selectedProduct.id) ? '✅ 已加入采购清单' : '🛒 加入采购清单'}
+                {isInList(selectedProduct.id) ? '✅ 已加入采购清单' : '+ 加入采购清单'}
               </button>
 
               {/* Link to store */}

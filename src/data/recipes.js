@@ -7,7 +7,7 @@ export default [
     // ==================== 晚餐 ====================
     {
       id: 'r001',
-      categoryId: 'dinner',
+      category: 'dinner',
       name: '番茄炒蛋盖饭',
       description: '最经典的中国家常菜，10分钟搞定，新手也能做',
       image: '/images/placeholder-food.png',
@@ -37,7 +37,7 @@ export default [
     },
     {
       id: 'r002',
-      categoryId: 'dinner',
+      category: 'dinner',
       name: '蒜蓉西兰花炒虾仁',
       description: '清爽低脂，高蛋白，健身党最爱',
       image: '/images/placeholder-food.png',
@@ -67,7 +67,7 @@ export default [
     },
     {
       id: 'r005',
-      categoryId: 'dinner',
+      category: 'dinner',
       name: '酸汤肥牛',
       description: '酸辣开胃，冬天来一碗暖到心里',
       image: '/images/placeholder-food.png',
@@ -100,7 +100,7 @@ export default [
     },
     {
       id: 'r011',
-      categoryId: 'dinner',
+      category: 'dinner',
       name: '可乐鸡翅',
       description: '甜咸口味超下饭，零失败的一道菜',
       image: '/images/placeholder-food.png',
@@ -131,7 +131,7 @@ export default [
     // ==================== 快手早餐 ====================
     {
       id: 'r003',
-      categoryId: 'breakfast',
+      category: 'breakfast',
       name: '吐司牛油果蛋',
       description: '5分钟搞定，营养满分，拍照也好看',
       image: '/images/placeholder-food.png',
@@ -158,7 +158,7 @@ export default [
     },
     {
       id: 'r010',
-      categoryId: 'breakfast',
+      category: 'breakfast',
       name: '燕麦香蕉松饼',
       description: '无需面粉，3种食材5分钟搞定',
       image: '/images/placeholder-food.png',
@@ -186,7 +186,7 @@ export default [
     // ==================== 午餐便当 ====================
     {
       id: 'r004',
-      categoryId: 'lunch',
+      category: 'lunch',
       name: '照烧鸡腿饭',
       description: '便当之王，冷了也好吃',
       image: '/images/placeholder-food.png',
@@ -215,7 +215,7 @@ export default [
     },
     {
       id: 'r009',
-      categoryId: 'lunch',
+      category: 'lunch',
       name: '日式咖喱饭',
       description: '一锅搞定，第二天更入味',
       image: '/images/placeholder-food.png',
@@ -248,7 +248,7 @@ export default [
     // ==================== 宵夜 ====================
     {
       id: 'r006',
-      categoryId: 'supper',
+      category: 'supper',
       name: '芝士焗方便面',
       description: '方便面的终极进化，深夜幸福加倍',
       image: '/images/placeholder-food.png',
@@ -275,7 +275,7 @@ export default [
     },
     {
       id: 'r012',
-      categoryId: 'supper',
+      category: 'supper',
       name: '蒜香吐司条',
       description: '追剧神器，比薯片还好吃',
       image: '/images/placeholder-food.png',
@@ -303,7 +303,7 @@ export default [
     // ==================== 火锅/聚餐 ====================
     {
       id: 'r007',
-      categoryId: 'hotpot',
+      category: 'hotpot',
       name: '留学生家常火锅',
       description: '几个人凑一锅，又暖又热闹',
       image: '/images/placeholder-food.png',
@@ -337,7 +337,7 @@ export default [
     // ==================== 甜点 ====================
     {
       id: 'r008',
-      categoryId: 'dessert',
+      category: 'dessert',
       name: '微波炉巧克力蛋糕',
       description: '5分钟搞定，比外面买的还好吃',
       image: '/images/placeholder-food.png',
