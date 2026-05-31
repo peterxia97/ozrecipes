@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import specialsData from '../data/specials';
 import categoriesData from '../data/categories';
+import { useShoppingList } from '../contexts/ShoppingListContext';
 
 const PAGE_SIZE = 50;
 
@@ -18,6 +19,7 @@ export default function Specials() {
   const [selectedProduct, setSelectedProduct] = useState(null);   // 大图弹窗
   const [compareProduct, setCompareProduct]   = useState(null);   // 比价弹窗
   const [currentPage, setCurrentPage] = useState(1);
+  const { addItem, isInList } = useShoppingList();
 
   // 滚动到顶部用的 ref
   const gridRef = useRef(null);
@@ -352,6 +354,18 @@ export default function Specials() {
                   </button>
                 )}
 
+                {/* Add to shopping list */}
+                <button
+                  onClick={() => addItem(s)}
+                  className={`mt-1 w-full text-[10px] sm:text-xs font-semibold px-2 py-1.5 rounded-lg active:scale-95 transition-all ${
+                    isInList(s.id)
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200'
+                  }`}
+                >
+                  {isInList(s.id) ? '✅ 已加清单' : '🛒 加入清单'}
+                </button>
+
                 {/* Category link to browse more */}
                 {s.link && (
                   <a
@@ -464,6 +478,18 @@ export default function Specials() {
                   </div>
                 );
               })()}
+
+              {/* Add to shopping list in modal */}
+              <button
+                onClick={() => addItem(selectedProduct)}
+                className={`mt-4 block text-center w-full font-bold py-3 rounded-xl hover:opacity-90 transition ${
+                  isInList(selectedProduct.id)
+                    ? 'bg-green-100 text-green-700 border-2 border-green-300'
+                    : 'bg-secondary text-white'
+                }`}
+              >
+                {isInList(selectedProduct.id) ? '✅ 已加入采购清单' : '🛒 加入采购清单'}
+              </button>
 
               {/* Link to store */}
               {selectedProduct.link && (
