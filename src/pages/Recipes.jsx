@@ -97,9 +97,19 @@ export default function Recipes() {
                 to={`/recipes/${recipe.id}`}
                 className="card no-underline text-inherit active:scale-[0.98] hover:-translate-y-1 transition-transform group"
               >
-                {/* Image area */}
+                {/* Image area with recipe cover or category icon */}
                 <div className="h-28 sm:h-44 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-5xl sm:text-7xl relative overflow-hidden">
-                  <span className="group-hover:scale-110 transition-transform">{catInfo?.icon || '🍽️'}</span>
+                  {recipe.image && !recipe.image.includes('placeholder') ? (
+                    <img
+                      src={recipe.image}
+                      alt={recipe.name}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                      loading="lazy"
+                      onError={(e) => { e.target.style.display = 'none'; }}
+                    />
+                  ) : (
+                    <span className="group-hover:scale-110 transition-transform">{catInfo?.icon || '🍽️'}</span>
+                  )}
                   {/* Difficulty badge */}
                   <span className={`absolute top-2 right-2 sm:top-3 sm:right-3 ${diffColor} text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full`}>
                     {difficultyMap[recipe.difficulty]}
