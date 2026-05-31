@@ -8,7 +8,6 @@ import categoriesData from '../data/categories';
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipe = recipesData.find(r => r.id === id);
-  const [showIngredients, setShowIngredients] = useState({});
   const [copied, setCopied] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -47,10 +46,6 @@ export default function RecipeDetail() {
     });
   }, [recipe.ingredients]);
 
-  const toggleIngredient = (ingId) => {
-    setShowIngredients(prev => ({ ...prev, [ingId]: !prev[ingId] }));
-  };
-
   const ingredientListText = recipe.ingredients
     .map(ing => {
       const d = ingredientsData.ingredients.find(d => d.id === ing.id);
@@ -66,24 +61,26 @@ export default function RecipeDetail() {
     });
   };
 
-  // Build a set of ingredient ids that have active specials this week
-  const specialsMap = useMemo(() => {
+  // Build a map of ingredient IDs to matching specials (by nameEn fuzzy match)
+  const ingredientSpecialsMap = useMemo(() => {
     const map = {};
-    const now = new Date().toISOString().split('T')[0];
-    specialsData.specials.forEach(s => {
-      if (s.validFrom <= now && s.validTo >= now) {
-        const key = s.nameEn?.toLowerCase() || '';
-        ingredientsData.ingredients.forEach(ing => {
-          if (ing.prices?.coles || ing.prices?.woolies || ing.prices?.aldi) {
-            if (ing.onSpecial || s.discount >= 50) {
-              map[ing.id] = s;
-            }
-          }
-        });
+    recipe.ingredients.forEach(ing => {
+      const detail = ingredientsData.ingredients.find(d => d.id === ing.id);
+      if (!detail) return;
+      const ingNameEn = (detail.nameEn || '').toLowerCase();
+      if (!ingNameEn) return;
+      // Find all specials whose nameEn contains or is contained by this ingredient's nameEn
+      const matches = specialsData.specials.filter(s => {
+        const sNameEn = (s.nameEn || '').toLowerCase();
+        if (!sNameEn) return false;
+        return ingNameEn.includes(sNameEn) || sNameEn.includes(ingNameEn);
+      });
+      if (matches.length > 0) {
+        map[ing.id] = matches;
       }
     });
     return map;
-  }, []);
+  }, [recipe.ingredients]);
 
   // Shared ingredient card component (used in both mobile and desktop)
   const IngredientCard = () => (
@@ -100,64 +97,40 @@ export default function RecipeDetail() {
 
       <div className="space-y-1">
         {ingredientDetails.map(({ id: ingId, amount, detail }) => {
-          // Check if this ingredient has a current special
-          const matchingSpecial = detail && specialsData.specials.find(s => {
-            const now = new Date().toISOString().split('T')[0];
-            if (s.validFrom > now || s.validTo < now) return false;
-            const ingNameEn = (detail.nameEn || '').toLowerCase();
-            const sNameEn = (s.nameEn || '').toLowerCase();
-            return ingNameEn && sNameEn && (
-              ingNameEn.includes(sNameEn) || sNameEn.includes(ingNameEn)
-            );
-          });
-          const isOnSpecial = detail?.onSpecial || !!matchingSpecial;
+          const matches = ingredientSpecialsMap[ingId];
 
           return (
             <div key={ingId}>
-              <div
-                className="flex items-center justify-between py-2.5 border-b border-gray-50 cursor-pointer active:bg-gray-50 rounded-lg px-2 -mx-2"
-                onClick={() => detail && toggleIngredient(ingId)}
-              >
+              <div className="flex items-center justify-between py-2.5 border-b border-gray-50 px-2 -mx-2">
                 <div className="flex-1">
-                  <div className="font-semibold text-sm text-gray-800 flex items-center gap-1">
+                  <div className="font-semibold text-sm text-gray-800">
                     {detail ? detail.name : ingId}
-                    {isOnSpecial && (
-                      <span className="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold leading-tight">半价</span>
-                    )}
                     {detail && <span className="text-gray-400 font-normal ml-1 text-xs">（{detail.nameEn}）</span>}
                   </div>
                   <div className="text-xs text-gray-500">{amount}</div>
                 </div>
                 {detail && (
-                  <span className="text-xs text-primary px-2 py-1">
-                    {showIngredients[ingId] ? '收起 ▲' : '价格 ▼'}
-                  </span>
+                  <span className="text-xs text-gray-400">🔍</span>
                 )}
               </div>
 
-              {showIngredients[ingId] && detail && (
-                <div className="mt-1 ml-2 p-3 bg-gray-50 rounded-2xl text-xs space-y-1.5">
-                  {detail.stores && detail.stores.filter(s => s.price > 0).map(s => (
-                    <div key={s.brand} className="flex justify-between">
-                      <span className={`font-bold ${s.brand === 'coles' ? 'text-[#E31E24]' : s.brand === 'woolies' ? 'text-[#1C7A3C]' : 'text-[#004C9B]'}`}>
-                        {s.brand === 'coles' ? 'Coles' : s.brand === 'woolies' ? 'Woolies' : 'Aldi'}
+              {/* Show specials info if this ingredient matches any half-price items */}
+              {matches && matches.length > 0 && (
+                <div className="mt-1 ml-2 p-3 bg-red-50 rounded-xl text-xs space-y-2">
+                  <div className="text-red-600 font-bold text-[11px]">🔥 本周半价</div>
+                  {matches.map((s, idx) => (
+                    <div key={idx} className="flex items-center justify-between">
+                      <span className={`font-bold ${s.brand === 'coles' ? 'text-[#E31E24]' : 'text-[#1C7A3C]'}`}>
+                        {s.brand === 'coles' ? 'Coles' : 'Woolies'}
                       </span>
-                      <span className="font-medium">
-                        ${s.price.toFixed(2)}
-                        {s.onSpecial && s.originalPrice && (
+                      <div className="text-right">
+                        <span className="text-red-600 font-bold">${s.salePrice?.toFixed(2)}</span>
+                        {s.originalPrice && (
                           <span className="text-gray-400 line-through ml-1 text-[10px]">${s.originalPrice.toFixed(2)}</span>
                         )}
-                      </span>
+                      </div>
                     </div>
                   ))}
-                  {isOnSpecial && (
-                    <div className="text-red-500 font-semibold text-[11px] mt-1 pt-1 border-t border-gray-200">
-                      🔥 本周特价！{matchingSpecial?.notes || '半价中，快去买！'}
-                    </div>
-                  )}
-                  {detail.searchTips && (
-                    <div className="text-gray-400 mt-1 pt-1 border-t border-gray-200">{detail.searchTips}</div>
-                  )}
                 </div>
               )}
             </div>
