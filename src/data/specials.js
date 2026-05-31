@@ -243,7 +243,771 @@ export default {
     },
 
 
-    // ==================== Woolworths 半价特价（全量 1978 个，2026-05-31 抓取） ====================
+        // ==================== Coles 半价特价（全量 74 个） ====================
+
+    // --- 肉类 (3个) ---
+    {
+      id: 'c0018', brand: 'coles', category: 'meat',
+      nameZh: '鸡肉', nameEn: 'Real Stock Chicken',
+      originalPrice: 4.5, salePrice: 2.25, discount: 50, unit: '1L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/8157935.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！鸡肉超值',
+    },
+
+    {
+      id: 'c0040', brand: 'coles', category: 'meat',
+      nameZh: '鸡肉', nameEn: 'Real Stock Chicken Stock Salt Reduced',
+      originalPrice: 4.5, salePrice: 2.25, discount: 50, unit: '1L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/8837306.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！鸡肉超值',
+    },
+
+    {
+      id: 'c0065', brand: 'coles', category: 'meat',
+      nameZh: '牛肉', nameEn: 'Fresh Pasta Beef Ravioli',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '600g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9991287.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛肉超值',
+    },
+
+
+    // --- 乳制品 (19个) ---
+    {
+      id: 'c0003', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Minis Milk Chocolate Snack & Share Bag',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '145g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9773038.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0004', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Milk Chocolate Snack & Share Bag',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5106508.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0005', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Peanut Milk Chocolate Snack & Share Bag',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '180g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5258947.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0009', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Milk Chocolate Snack & Share Bag',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '180g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5258936.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0010', brand: 'coles', category: 'dairy',
+      nameZh: '黄油', nameEn: 'Body Lotion Cocoa Butter Indulge',
+      originalPrice: 10, salePrice: 5, discount: 50, unit: '400mL',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3240543.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！黄油超值',
+    },
+
+    {
+      id: 'c0011', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Milk Chocolate Assorted Gift Box',
+      originalPrice: 15.5, salePrice: 7.75, discount: 50, unit: '320g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3609235.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0019', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Twirl Milk Chocolate Sharepack 12 Pack',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '168g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2353078.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0021', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Dairy Milk Chocolate Freddo Sharepack 12 Pack',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '144g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3768851.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0023', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Dairy Milk Chocolate Caramello Koala Sharepack 12 Pack',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '180g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2353056.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0042', brand: 'coles', category: 'dairy',
+      nameZh: '牛奶', nameEn: 'Dairy Milk Chocolate Sharepack 12 Pack',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '144g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3768840.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！牛奶超值',
+    },
+
+    {
+      id: 'c0045', brand: 'coles', category: 'dairy',
+      nameZh: '芝士', nameEn: 'Cheese Supreme Corn Chips Sharepack',
+      originalPrice: 8.5, salePrice: 4.25, discount: 50, unit: '380g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3568331.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！芝士超值',
+    },
+
+    {
+      id: 'c0057', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Greek Yogurt Pouch Raspberry',
+      originalPrice: 2.7, salePrice: 1.35, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1872885.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0058', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Greek Yogurt Pouch Strawberry',
+      originalPrice: 2.7, salePrice: 1.35, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1434684.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0059', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Flip Cookies & Cream Crunch Yoghurt',
+      originalPrice: 4, salePrice: 2, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3246700.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0060', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Greek Yogurt Pouch Blueberry',
+      originalPrice: 2.7, salePrice: 1.35, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1434720.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0061', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Flip Yogurt Triple Choc Brownie',
+      originalPrice: 4, salePrice: 2, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6621645.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0062', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Greek Yogurt Pouch Vanilla',
+      originalPrice: 2.7, salePrice: 1.35, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3088110.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0066', brand: 'coles', category: 'dairy',
+      nameZh: '酸奶', nameEn: 'Yogurt Caramel Slice',
+      originalPrice: 4, salePrice: 2, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9961344.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+    {
+      id: 'c0068', brand: 'coles', category: 'dairy',
+      nameZh: '鲜奶油', nameEn: 'Fresh Creamy Tomato Sauce',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '425g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9990637.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！鲜奶油超值',
+    },
+
+
+    // --- 水果 (1个) ---
+    {
+      id: 'c0063', brand: 'coles', category: 'fruit',
+      nameZh: '酸奶', nameEn: 'Flip Strawberry Shortcake Yoghurt',
+      originalPrice: 4, salePrice: 2, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2974982.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+
+    // --- 蔬菜 (3个) ---
+    {
+      id: 'c0032', brand: 'coles', category: 'vegetable',
+      nameZh: '土豆', nameEn: 'Original Potato Chips',
+      originalPrice: 5, salePrice: 2.5, discount: 50, unit: '175g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6833891.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！土豆超值',
+    },
+
+    {
+      id: 'c0033', brand: 'coles', category: 'vegetable',
+      nameZh: '土豆', nameEn: 'Light & Tangy Potato Chips',
+      originalPrice: 5, salePrice: 2.5, discount: 50, unit: '175g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6833927.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！土豆超值',
+    },
+
+    {
+      id: 'c0052', brand: 'coles', category: 'vegetable',
+      nameZh: '土豆', nameEn: 'Salt & Vinegar Potato Chips',
+      originalPrice: 5, salePrice: 2.5, discount: 50, unit: '175g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6833949.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！土豆超值',
+    },
+
+
+    // --- 谷物粮食 (5个) ---
+    {
+      id: 'c0016', brand: 'coles', category: 'grain',
+      nameZh: 'Nutri-grain Protein Breakfast', nameEn: 'Nutri-grain Protein Breakfast Cereal',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '290g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/8491755.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Nutri-grain Protein Breakfast超值',
+    },
+
+    {
+      id: 'c0017', brand: 'coles', category: 'grain',
+      nameZh: '可乐', nameEn: 'Tim Tam Chocolate Biscuits Double Coat',
+      originalPrice: 6, salePrice: 3, discount: 50, unit: '200g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/7/7029292.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0028', brand: 'coles', category: 'grain',
+      nameZh: '大米', nameEn: 'Jasmine White Rice',
+      originalPrice: 27, salePrice: 13.5, discount: 50, unit: '5kg',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4363786.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！大米超值',
+    },
+
+    {
+      id: 'c0030', brand: 'coles', category: 'grain',
+      nameZh: 'Sultana Bran High', nameEn: 'Sultana Bran High Fibre Breakfast Cereal',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '420g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/8491212.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Sultana Bran High超值',
+    },
+
+    {
+      id: 'c0067', brand: 'coles', category: 'grain',
+      nameZh: '意面', nameEn: 'Fresh Pasta Ricotta & Spinach Agnolotti',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '600g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9991390.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！意面超值',
+    },
+
+
+    // --- 调味料/干货 (2个) ---
+    {
+      id: 'c0015', brand: 'coles', category: 'pantry',
+      nameZh: '橄榄油', nameEn: 'Extra Virgin Olive Oil',
+      originalPrice: 26, salePrice: 13, discount: 50, unit: '1L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5833557.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！橄榄油超值',
+    },
+
+    {
+      id: 'c0070', brand: 'coles', category: 'pantry',
+      nameZh: 'Fresh Bolognese Sauce', nameEn: 'Fresh Bolognese Sauce',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '425g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/9/9990670.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Fresh Bolognese Sauce超值',
+    },
+
+
+    // --- 饮料酒水 (12个) ---
+    {
+      id: 'c0008', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Chocolate Snack & Share Party Bag',
+      originalPrice: 7, salePrice: 3.5, discount: 50, unit: '160g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5899760.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0013', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Max No Sugar Cola Soft Drink Bottle',
+      originalPrice: 3.75, salePrice: 1.87, discount: 50, unit: '1.25L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5441863.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0014', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Tim Tam Chocolate Biscuits Original',
+      originalPrice: 6, salePrice: 3, discount: 50, unit: '200g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/329607.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0022', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Favourites Boxed Chocolate',
+      originalPrice: 24, salePrice: 12, discount: 50, unit: '470g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1115529.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0024', brand: 'coles', category: 'drinks',
+      nameZh: '水', nameEn: 'Pure Natural Coconut Water',
+      originalPrice: 5.5, salePrice: 2.75, discount: 50, unit: '1L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3517705.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！水超值',
+    },
+
+    {
+      id: 'c0025', brand: 'coles', category: 'drinks',
+      nameZh: 'Freeze Dried Classic', nameEn: 'Freeze Dried Classic Instant Coffee',
+      originalPrice: 39, salePrice: 19.5, discount: 50, unit: '400g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4824030.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Freeze Dried Classic超值',
+    },
+
+    {
+      id: 'c0039', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Bueno Chocolate Bar',
+      originalPrice: 3, salePrice: 1.5, discount: 50, unit: '43g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5216969.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0041', brand: 'coles', category: 'drinks',
+      nameZh: 'Zero Sugar Original', nameEn: 'Zero Sugar Original Lemon Soft Drink',
+      originalPrice: 3.75, salePrice: 1.87, discount: 50, unit: '1.25L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1167362.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Zero Sugar Original超值',
+    },
+
+    {
+      id: 'c0043', brand: 'coles', category: 'drinks',
+      nameZh: 'Thirst Crusher Original', nameEn: 'Thirst Crusher Original Lemon Soft Drink Bottle',
+      originalPrice: 3.75, salePrice: 1.87, discount: 50, unit: '1.25L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/147494.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Thirst Crusher Original超值',
+    },
+
+    {
+      id: 'c0046', brand: 'coles', category: 'drinks',
+      nameZh: '水', nameEn: 'Soda Water Bottle Classic Mixers Glass Multipack 300ml x 4 Pack',
+      originalPrice: 8, salePrice: 4, discount: 50, unit: '4 pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/7/7351965.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！水超值',
+    },
+
+    {
+      id: 'c0047', brand: 'coles', category: 'drinks',
+      nameZh: '可乐', nameEn: 'Special Treats Mix Chocolate Sharepack 12 Pack',
+      originalPrice: 7.5, salePrice: 3.75, discount: 50, unit: '180g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2352960.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！可乐超值',
+    },
+
+    {
+      id: 'c0064', brand: 'coles', category: 'drinks',
+      nameZh: '酸奶', nameEn: 'Flip Mint Chocolate Chip Yoghurt',
+      originalPrice: 4, salePrice: 2, discount: 50, unit: '140g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2974971.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！酸奶超值',
+    },
+
+
+    // --- 零食糖果 (1个) ---
+    {
+      id: 'c0027', brand: 'coles', category: 'snacks',
+      nameZh: '薯片', nameEn: 'Lightly Salted Tortilla Chips',
+      originalPrice: 5.2, salePrice: 2.6, discount: 50, unit: '175g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3950593.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！薯片超值',
+    },
+
+
+    // --- 日用品 (11个) ---
+    {
+      id: 'c0001', brand: 'coles', category: 'household',
+      nameZh: 'Ultimate Dishwasher Tablets', nameEn: 'Ultimate Dishwasher Tablets Lemon',
+      originalPrice: 49, salePrice: 24.5, discount: 50, unit: '46 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3967235.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultimate Dishwasher Tablets超值',
+    },
+
+    {
+      id: 'c0020', brand: 'coles', category: 'household',
+      nameZh: '洗衣液', nameEn: 'Laundry Liquid Detergent Sensitive 40 Washes',
+      originalPrice: 30, salePrice: 15, discount: 50, unit: '2L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2731030.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！洗衣液超值',
+    },
+
+    {
+      id: 'c0026', brand: 'coles', category: 'household',
+      nameZh: '洗衣液', nameEn: 'Laundry Liquid Detergent Active Clean 40 Washes',
+      originalPrice: 30, salePrice: 15, discount: 50, unit: '2L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2731007.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！洗衣液超值',
+    },
+
+    {
+      id: 'c0031', brand: 'coles', category: 'household',
+      nameZh: 'Lemon Dishwashing Liquid', nameEn: 'Lemon Dishwashing Liquid',
+      originalPrice: 6, salePrice: 3, discount: 50, unit: '400mL',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2225395.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Lemon Dishwashing Liquid超值',
+    },
+
+    {
+      id: 'c0036', brand: 'coles', category: 'household',
+      nameZh: '洗衣液', nameEn: 'Laundry Detergent Washing Powder Sensitive',
+      originalPrice: 30, salePrice: 15, discount: 50, unit: '2Kg',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2731776.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！洗衣液超值',
+    },
+
+    {
+      id: 'c0037', brand: 'coles', category: 'household',
+      nameZh: 'Ultimate Dishwashing Tablets', nameEn: 'Ultimate Dishwashing Tablets Lemon',
+      originalPrice: 68, salePrice: 34, discount: 50, unit: '70 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1062127.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultimate Dishwashing Tablets超值',
+    },
+
+    {
+      id: 'c0038', brand: 'coles', category: 'household',
+      nameZh: '纸尿裤', nameEn: 'Premium Nappy Pants Size 5 (13-18kg)',
+      originalPrice: 17.5, salePrice: 8.75, discount: 50, unit: '26 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3445932.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！纸尿裤超值',
+    },
+
+    {
+      id: 'c0044', brand: 'coles', category: 'household',
+      nameZh: 'Ultimate 0% Dishwashing', nameEn: 'Ultimate 0% Dishwashing Tablets Regular',
+      originalPrice: 49, salePrice: 24.5, discount: 50, unit: '46 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/7/7752445.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultimate 0% Dishwashing超值',
+    },
+
+    {
+      id: 'c0053', brand: 'coles', category: 'household',
+      nameZh: '洗衣液', nameEn: 'Odour Removal Laundry Liquid Washing Detergent',
+      originalPrice: 20, salePrice: 10, discount: 50, unit: '1.8L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4317508.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！洗衣液超值',
+    },
+
+    {
+      id: 'c0055', brand: 'coles', category: 'household',
+      nameZh: '纸尿裤', nameEn: 'Premium Nappy Pants Size 6 (15-20kg)',
+      originalPrice: 17.5, salePrice: 8.75, discount: 50, unit: '24 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3445954.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！纸尿裤超值',
+    },
+
+    {
+      id: 'c0056', brand: 'coles', category: 'household',
+      nameZh: 'Ultimate Plus Dishwashing', nameEn: 'Ultimate Plus Dishwashing Tablets Lemon',
+      originalPrice: 68, salePrice: 34, discount: 50, unit: '56 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6132183.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultimate Plus Dishwashing超值',
+    },
+
+
+    // --- 婴儿用品 (1个) ---
+    {
+      id: 'c0034', brand: 'coles', category: 'baby',
+      nameZh: 'Fragrance Free Sensitive', nameEn: 'Fragrance Free Sensitive Skin Baby Wipes',
+      originalPrice: 14, salePrice: 7, discount: 50, unit: '240 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1514499.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Fragrance Free Sensitive超值',
+    },
+
+
+    // --- 其他 (16个) ---
+    {
+      id: 'c0002', brand: 'coles', category: 'other',
+      nameZh: 'Lip Balm Conditioning', nameEn: 'Lip Balm Conditioning',
+      originalPrice: 6.5, salePrice: 3.25, discount: 50, unit: '4.25g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4510348.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Lip Balm Conditioning超值',
+    },
+
+    {
+      id: 'c0006', brand: 'coles', category: 'other',
+      nameZh: 'Ultra Lip Balm', nameEn: 'Ultra Lip Balm SPF 50+',
+      originalPrice: 6.5, salePrice: 3.25, discount: 50, unit: '4.25g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/8903386.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultra Lip Balm超值',
+    },
+
+    {
+      id: 'c0007', brand: 'coles', category: 'other',
+      nameZh: 'Ultiboost Calm +', nameEn: 'Ultiboost Calm + Sleep Gummies Assists the Body in Coping with Stress',
+      originalPrice: 29.5, salePrice: 14.75, discount: 50, unit: '60 pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4806592.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Ultiboost Calm +超值',
+    },
+
+    {
+      id: 'c0012', brand: 'coles', category: 'other',
+      nameZh: 'Muffins English', nameEn: 'Muffins English',
+      originalPrice: 6.4, salePrice: 3.2, discount: 50, unit: '400g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/332394.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Muffins English超值',
+    },
+
+    {
+      id: 'c0029', brand: 'coles', category: 'other',
+      nameZh: 'Napisan Gold Colours', nameEn: 'Napisan Gold Colours Stain Remover',
+      originalPrice: 32, salePrice: 16, discount: 50, unit: '2kg',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5061090.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Napisan Gold Colours超值',
+    },
+
+    {
+      id: 'c0035', brand: 'coles', category: 'other',
+      nameZh: 'Muffins English Wholemeal', nameEn: 'Muffins English Wholemeal',
+      originalPrice: 6.4, salePrice: 3.2, discount: 50, unit: '400g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/5/5137320.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Muffins English Wholemeal超值',
+    },
+
+    {
+      id: 'c0048', brand: 'coles', category: 'other',
+      nameZh: 'Coppertop AA Alkaline', nameEn: 'Coppertop AA Alkaline Batteries',
+      originalPrice: 28, salePrice: 14, discount: 50, unit: '16 Pack',
+      image: 'https://cdn.productimages.coles.com.au/productimages/6/6806866.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Coppertop AA Alkaline超值',
+    },
+
+    {
+      id: 'c0049', brand: 'coles', category: 'other',
+      nameZh: 'Total Active Prevention', nameEn: 'Total Active Prevention Deep Clean Toothpaste',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '200g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/3/3400887.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Total Active Prevention超值',
+    },
+
+    {
+      id: 'c0050', brand: 'coles', category: 'other',
+      nameZh: 'Disinfectant Air Freshener', nameEn: 'Disinfectant Air Freshener Spray Original',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '300g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/8/80430.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Disinfectant Air Freshener超值',
+    },
+
+    {
+      id: 'c0051', brand: 'coles', category: 'other',
+      nameZh: 'Regular Liquid', nameEn: 'Regular Liquid',
+      originalPrice: 24, salePrice: 12, discount: 50, unit: '2L',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2688214.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Regular Liquid超值',
+    },
+
+    {
+      id: 'c0054', brand: 'coles', category: 'other',
+      nameZh: 'Angel Slice 6', nameEn: 'Angel Slice 6 Pack',
+      originalPrice: 6.2, salePrice: 3.1, discount: 50, unit: '165g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/2/2762237.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Angel Slice 6超值',
+    },
+
+    {
+      id: 'c0069', brand: 'coles', category: 'other',
+      nameZh: 'Fresh Pumpkin &', nameEn: 'Fresh Pumpkin & Fetta Ravioli',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '600g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1809620.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Fresh Pumpkin &超值',
+    },
+
+    {
+      id: 'c0071', brand: 'coles', category: 'other',
+      nameZh: 'Immune Plus Wellness', nameEn: 'Immune Plus Wellness Shot',
+      originalPrice: 3.5, salePrice: 1.75, discount: 50, unit: '60mL',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4471440.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Immune Plus Wellness超值',
+    },
+
+    {
+      id: 'c0072', brand: 'coles', category: 'other',
+      nameZh: 'Fresh Veal Tortellini', nameEn: 'Fresh Veal Tortellini',
+      originalPrice: 11, salePrice: 5.5, discount: 50, unit: '600g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1809594.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Fresh Veal Tortellini超值',
+    },
+
+    {
+      id: 'c0073', brand: 'coles', category: 'other',
+      nameZh: 'Shot Energy', nameEn: 'Shot Energy',
+      originalPrice: 3.5, salePrice: 1.75, discount: 50, unit: '60mL',
+      image: 'https://cdn.productimages.coles.com.au/productimages/4/4471450.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Shot Energy超值',
+    },
+
+    {
+      id: 'c0074', brand: 'coles', category: 'other',
+      nameZh: 'Irish Porter Cheddar', nameEn: 'Irish Porter Cheddar',
+      originalPrice: 7.9, salePrice: 3.95, discount: 50, unit: '170g',
+      image: 'https://cdn.productimages.coles.com.au/productimages/1/1094371.jpg',
+      isHot: true,
+      validFrom: '2026-05-28', validTo: '2026-06-03',
+      notes: '半价！Irish Porter Cheddar超值',
+    },
+
+
+// ==================== Woolworths 半价特价（全量 1978 个，2026-05-31 抓取） ====================
 
     // --- 肉类 (208个) ---
     {
