@@ -4,7 +4,9 @@ import specialsData from '../data/specials';
 import categoriesData from '../data/categories';
 
 const featured = recipesData.slice(0, 6);
-const weekSpecials = specialsData.specials.slice(0, 6);
+const weekSpecials = specialsData.specials
+  .filter(s => s.isHot)
+  .slice(0, 6);
 
 export default function Home() {
   return (
@@ -169,13 +171,13 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${
-                      s.brand === 'coles' ? 'bg-[#E31E24]' : s.brand === 'woolies' ? 'bg-[#1C7A3C]' : 'bg-[#004C9B]'
+                      (s.store || s.brand) === 'coles' ? 'bg-[#E31E24]' : (s.store || s.brand) === 'woolworths' || (s.store || s.brand) === 'woolies' ? 'bg-[#1C7A3C]' : 'bg-[#004C9B]'
                     }`}>
-                      {s.brand === 'coles' ? 'Coles' : s.brand === 'woolies' ? 'Woolies' : 'Aldi'}
+                      {(s.store || s.brand) === 'coles' ? 'Coles' : (s.store || s.brand) === 'woolworths' || (s.store || s.brand) === 'woolies' ? 'Woolies' : 'Aldi'}
                     </span>
                     {s.isHot && <span className="text-xs">🔥</span>}
                   </div>
-                  <div className="font-semibold text-sm text-gray-900 truncate">{s.name}</div>
+                  <div className="font-semibold text-sm text-gray-900 truncate">{s.nameZh || s.nameEn || s.name}</div>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="text-primary font-extrabold">${s.salePrice.toFixed(2)}</span>
                     {s.originalPrice > s.salePrice && (

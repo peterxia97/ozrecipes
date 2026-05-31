@@ -10,15 +10,21 @@ export default {
   ],
 
   specialCategories: [
-    { id: 'all',    name: '全部',     icon: '📋' },
-    { id: 'meat',   name: '肉类',     icon: '🥩' },
-    { id: 'veggie', name: '蔬菜',     icon: '🥬' },
-    { id: 'dairy',  name: '乳制品',   icon: '🧀' },
-    { id: 'snack',  name: '零食',     icon: '🍪' },
-    { id: 'frozen', name: '冷冻食品', icon: '🧊' },
-    { id: 'fruit',  name: '水果',     icon: '🍎' },
-    { id: 'pantry', name: '调味/干货', icon: '🧂' },
-    { id: 'bakery', name: '面包/烘焙', icon: '🍞' },
+    { id: 'all',       name: '全部',       icon: '📋' },
+    { id: 'meat',      name: '肉类海鲜',   icon: '🥩' },
+    { id: 'dairy',     name: '乳制品蛋类', icon: '🧀' },
+    { id: 'fruit',     name: '水果蔬菜',   icon: '🥬' },
+    { id: 'bakery',    name: '面包烘焙',   icon: '🍞' },
+    { id: 'drinks',    name: '饮品饮料',   icon: '🥤' },
+    { id: 'snacks',    name: '零食糖果',   icon: '🍪' },
+    { id: 'grain',     name: '谷物早餐',   icon: '🥣' },
+    { id: 'pantry',    name: '食品储藏',   icon: '🧂' },
+    { id: 'frozen',    name: '冷冻食品',   icon: '🧊' },
+    { id: 'health',    name: '健康美容',   icon: '💊' },
+    { id: 'household', name: '清洁家居',   icon: '🧴' },
+    { id: 'baby',      name: '母婴用品',   icon: '🍼' },
+    { id: 'pet',       name: '宠物用品',   icon: '🐾' },
+    { id: 'other',     name: '其他',       icon: '📦' },
   ],
 
   // 难度映射
@@ -30,8 +36,9 @@ export default {
 
   // 超市品牌映射
   brandMap: {
-    coles:   { name: 'Coles',       color: '#E31E24', icon: '/images/coles-logo.png' },
-    woolies: { name: 'Woolworths',  color: '#1C7A3C', icon: '/images/woolies-logo.png' },
-    aldi:    { name: 'Aldi',        color: '#004C9B', icon: '/images/aldi-logo.png' },
+    coles:       { name: 'Coles',       color: '#E31E24', icon: '/images/coles-logo.png' },
+    woolworths:  { name: 'Woolworths',  color: '#1C7A3C', icon: '/images/woolies-logo.png' },
+    woolies:     { name: 'Woolworths',  color: '#1C7A3C', icon: '/images/woolies-logo.png' },
+    aldi:        { name: 'Aldi',        color: '#004C9B', icon: '/images/aldi-logo.png' },
   },
 };
