@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import recipesData from '../data/recipes';
 import ingredientsData from '../data/ingredients';
 import specialsData from '../data/specials';
@@ -10,6 +10,23 @@ export default function RecipeDetail() {
   const recipe = recipesData.find(r => r.id === id);
   const [showIngredients, setShowIngredients] = useState({});
   const [copied, setCopied] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Check if recipe has real images (not placeholder)
+  const hasRealImage = recipe?.image && !recipe.image.includes('placeholder');
+  const recipeImages = recipe?.images?.length > 0 ? recipe.images : (hasRealImage ? [recipe.image] : []);
+
+  const nextImage = useCallback(() => {
+    if (recipeImages.length > 1) {
+      setCurrentImageIndex(prev => (prev + 1) % recipeImages.length);
+    }
+  }, [recipeImages.length]);
+
+  const prevImage = useCallback(() => {
+    if (recipeImages.length > 1) {
+      setCurrentImageIndex(prev => (prev - 1 + recipeImages.length) % recipeImages.length);
+    }
+  }, [recipeImages.length]);
 
   if (!recipe) {
     return (
@@ -120,35 +137,27 @@ export default function RecipeDetail() {
 
               {showIngredients[ingId] && detail && (
                 <div className="mt-1 ml-2 p-3 bg-gray-50 rounded-2xl text-xs space-y-1.5">
-                  {detail.prices.coles && (
-                    <div className="flex justify-between">
-                      <span className="text-[#E31E24] font-bold">Coles</span>
+                  {detail.stores && detail.stores.filter(s => s.price > 0).map(s => (
+                    <div key={s.brand} className="flex justify-between">
+                      <span className={`font-bold ${s.brand === 'coles' ? 'text-[#E31E24]' : s.brand === 'woolies' ? 'text-[#1C7A3C]' : 'text-[#004C9B]'}`}>
+                        {s.brand === 'coles' ? 'Coles' : s.brand === 'woolies' ? 'Woolies' : 'Aldi'}
+                      </span>
                       <span className="font-medium">
-                        ${detail.prices.coles.toFixed(2)}
-                        {detail.onSpecial && detail.originalPrice && (
-                          <span className="text-gray-400 line-through ml-1 text-[10px]">${detail.originalPrice.toFixed(2)}</span>
+                        ${s.price.toFixed(2)}
+                        {s.onSpecial && s.originalPrice && (
+                          <span className="text-gray-400 line-through ml-1 text-[10px]">${s.originalPrice.toFixed(2)}</span>
                         )}
                       </span>
                     </div>
-                  )}
-                  {detail.prices.woolies && (
-                    <div className="flex justify-between">
-                      <span className="text-[#1C7A3C] font-bold">Woolies</span>
-                      <span className="font-medium">${detail.prices.woolies.toFixed(2)}</span>
-                    </div>
-                  )}
-                  {detail.prices.aldi && (
-                    <div className="flex justify-between">
-                      <span className="text-[#004C9B] font-bold">Aldi</span>
-                      <span className="font-medium">${detail.prices.aldi.toFixed(2)}</span>
-                    </div>
-                  )}
+                  ))}
                   {isOnSpecial && (
                     <div className="text-red-500 font-semibold text-[11px] mt-1 pt-1 border-t border-gray-200">
                       🔥 本周特价！{matchingSpecial?.notes || '半价中，快去买！'}
                     </div>
                   )}
-                  <div className="text-gray-400 mt-1 pt-1 border-t border-gray-200">{detail.notes}</div>
+                  {detail.searchTips && (
+                    <div className="text-gray-400 mt-1 pt-1 border-t border-gray-200">{detail.searchTips}</div>
+                  )}
                 </div>
               )}
             </div>
@@ -201,13 +210,61 @@ export default function RecipeDetail() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content */}
         <div className="lg:col-span-2">
-          {/* Hero — compact header with gradient + category icon */}
-          <div className="w-full h-40 sm:h-56 bg-gradient-to-br from-primary/10 via-orange-50 to-secondary/10 rounded-2xl sm:rounded-3xl flex items-center justify-center text-6xl sm:text-8xl mb-4 sm:mb-6 relative overflow-hidden">
-            <span className="relative z-10">{catInfo?.icon || '🍽️'}</span>
-            {/* Decorative circles */}
-            <div className="absolute top-4 right-4 w-20 h-20 bg-primary/10 rounded-full" />
-            <div className="absolute bottom-4 left-4 w-16 h-16 bg-secondary/10 rounded-full" />
-          </div>
+          {/* Hero — show real image if available, otherwise gradient fallback */}
+          {hasRealImage ? (
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-6 bg-gray-100">
+              <img
+                src={recipeImages[currentImageIndex]}
+                alt={recipe.name}
+                className="w-full h-full object-cover"
+                onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+              />
+              {/* Fallback if image fails to load */}
+              <div className="hidden w-full h-full bg-gradient-to-br from-primary/10 via-orange-50 to-secondary/10 items-center justify-center text-6xl sm:text-8xl">
+                {catInfo?.icon || '🍽️'}
+              </div>
+              {/* Image navigation arrows */}
+              {recipeImages.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 text-white rounded-full flex items-center justify-center text-lg backdrop-blur-sm transition-colors"
+                  >‹</button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 text-white rounded-full flex items-center justify-center text-lg backdrop-blur-sm transition-colors"
+                  >›</button>
+                  {/* Image indicators */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                    {recipeImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? 'bg-white w-5' : 'bg-white/50'}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+              {/* XHS badge */}
+              {recipe.xiaohongshuUrl && (
+                <a
+                  href={recipe.xiaohongshuUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="absolute top-3 right-3 bg-red-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full no-underline hover:bg-red-600 backdrop-blur-sm"
+                >
+                  小红书 ↗
+                </a>
+              )}
+            </div>
+          ) : (
+            <div className="w-full h-40 sm:h-56 bg-gradient-to-br from-primary/10 via-orange-50 to-secondary/10 rounded-2xl sm:rounded-3xl flex items-center justify-center text-6xl sm:text-8xl mb-4 sm:mb-6 relative overflow-hidden">
+              <span className="relative z-10">{catInfo?.icon || '🍽️'}</span>
+              <div className="absolute top-4 right-4 w-20 h-20 bg-primary/10 rounded-full" />
+              <div className="absolute bottom-4 left-4 w-16 h-16 bg-secondary/10 rounded-full" />
+            </div>
+          )}
 
           {/* Title + Meta */}
           <div className="mb-6 sm:mb-8">
@@ -248,8 +305,8 @@ export default function RecipeDetail() {
             </div>
           )}
 
-          {/* 小红书 reference */}
-          {recipe.xiaohongshuUrl && (
+          {/* 小红书 reference (only show if no real image hero — otherwise badge is on image) */}
+          {recipe.xiaohongshuUrl && !hasRealImage && (
             <a
               href={recipe.xiaohongshuUrl}
               target="_blank"
@@ -269,8 +326,19 @@ export default function RecipeDetail() {
                   <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 bg-primary text-white rounded-full flex items-center justify-center font-extrabold text-xs sm:text-sm">
                     {i + 1}
                   </div>
-                  <div className="pt-1">
+                  <div className="pt-1 flex-1">
                     <div className="text-sm sm:text-base text-gray-700 leading-relaxed">{step.text}</div>
+                    {/* Step image */}
+                    {step.image && (
+                      <div className="mt-2 rounded-xl overflow-hidden bg-gray-50">
+                        <img
+                          src={step.image}
+                          alt={`步骤 ${i + 1}`}
+                          className="w-full max-h-64 object-cover"
+                          onError={(e) => { e.target.style.display = 'none'; }}
+                        />
+                      </div>
+                    )}
                     {step.tip && (
                       <div className="mt-1 text-xs text-orange-600 bg-orange-50 px-3 py-1.5 rounded-lg inline-block">
                         💡 {step.tip}

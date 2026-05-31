@@ -74,6 +74,13 @@ export default {
         { brand: 'aldi', price: 4.99, product: 'Aldi Bacon' },
       ],
       searchTips: 'Deli section, near ham and cold cuts' },
+    { id: 'smoked_pork_knuckle', nameZh: '烟熏猪肘', nameEn: 'Smoked Pork Knuckle', category: 'meat', unit: 'kg',
+      stores: [
+        { brand: 'coles', price: 14.00, product: 'Coles Smoked Pork Knuckle' },
+        { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
+        { brand: 'aldi', price: 12.00, product: 'Aldi Smoked Pork Knuckle' },
+      ],
+      searchTips: 'Meat/Deli section, 烟熏味，适合凉拌卤制' },
 
     // ==================== 蔬菜 ====================
     { id: 'tomato', nameZh: '番茄', nameEn: 'Tomato', category: 'veggie', unit: 'kg',
@@ -174,6 +181,34 @@ export default {
         { brand: 'aldi', price: 2.99, product: 'Aldi Baby Spinach' },
       ],
       searchTips: 'Pre-washed salad section' },
+    { id: 'cucumber', nameZh: '黄瓜', nameEn: 'Cucumber', category: 'veggie', unit: 'each',
+      stores: [
+        { brand: 'coles', price: 2.00, product: 'Coles Cucumber' },
+        { brand: 'woolies', price: 1.80, product: 'Woolies Cucumber' },
+        { brand: 'aldi', price: 1.49, product: 'Aldi Cucumber' },
+      ],
+      searchTips: 'Fresh produce section, 凉拌必备' },
+    { id: 'bean_sprout', nameZh: '豆芽', nameEn: 'Bean Sprouts', category: 'veggie', unit: 'pack',
+      stores: [
+        { brand: 'coles', price: 2.50, product: 'Coles Bean Sprouts' },
+        { brand: 'woolies', price: 2.30, product: 'Woolies Bean Sprouts' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'Asian vegetable section, 凉拌炒菜都可以' },
+    { id: 'fungus', nameZh: '木耳', nameEn: 'Wood Ear Mushroom', category: 'veggie', unit: 'pack',
+      stores: [
+        { brand: 'coles', price: 3.00, product: 'Coles Dried Fungus' },
+        { brand: 'woolies', price: 2.80, product: 'Woolies Dried Fungus' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'International aisle, 干货区，泡发后使用' },
+    { id: 'peanut', nameZh: '花生米', nameEn: 'Peanuts', category: 'pantry', unit: '200g',
+      stores: [
+        { brand: 'coles', price: 2.50, product: 'Coles Roasted Peanuts' },
+        { brand: 'woolies', price: 2.30, product: 'Woolies Peanuts' },
+        { brand: 'aldi', price: 1.99, product: 'Aldi Peanuts' },
+      ],
+      searchTips: 'Snack/nuts aisle, 凉菜点睛之笔' },
 
     // ==================== 乳制品 ====================
     { id: 'egg', nameZh: '鸡蛋', nameEn: 'Eggs', category: 'dairy', unit: 'dozen',
@@ -512,6 +547,27 @@ export default {
         { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
       ],
       searchTips: 'International aisle, look for vermicelli' },
+    { id: 'rice_wine', nameZh: '米酒', nameEn: 'Rice Wine / Shaoxing Wine', category: 'pantry', unit: '500ml',
+      stores: [
+        { brand: 'coles', price: 4.00, product: 'Coles Shaoxing Wine' },
+        { brand: 'woolies', price: 3.50, product: 'Woolies Rice Wine' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'International/Asian aisle, 去腥必备' },
+    { id: 'dried_chili', nameZh: '干辣椒', nameEn: 'Dried Chili', category: 'pantry', unit: 'pack',
+      stores: [
+        { brand: 'coles', price: 2.50, product: 'Coles Dried Chilli' },
+        { brand: 'woolies', price: 2.30, product: 'Woolies Dried Chilli' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'International/Spice aisle, 煮肉去腥增香' },
+    { id: 'xiaomi_chili', nameZh: '小米辣', nameEn: 'Bird Eye Chili', category: 'veggie', unit: 'pack',
+      stores: [
+        { brand: 'coles', price: 3.50, product: 'Coles Bird Eye Chili' },
+        { brand: 'woolies', price: 3.00, product: 'Woolies Bird Eye Chili' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'Fresh produce / Asian veggie section, 凉拌炒菜提辣' },
 
     // ==================== 调酒/饮品食材 ====================
     { id: 'coconut_water', nameZh: '椰子水', nameEn: 'Coconut Water', category: 'pantry', unit: '1L',

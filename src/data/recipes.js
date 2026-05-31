@@ -334,6 +334,66 @@ export default [
       likes: 789,
     },
 
+    // ==================== 小红书精选 ====================
+    {
+      id: 'r013',
+      category: 'dinner',
+      name: '川味凉拌烟熏猪肘',
+      description: 'Coles 14刀/kg的烟熏猪肘，煮完冷藏一晚切片凉拌，肉皮Q弹筋道像蹄筋，手残党尊严配方',
+      image: '/images/recipes/smoked-pork-knuckle.jpg',
+      images: [
+        '/images/recipes/smoked-pork-knuckle-raw.jpg',
+        '/images/recipes/smoked-pork-knuckle.jpg',
+      ],
+      cookTime: 20,
+      difficulty: 'easy',
+      servings: 4,
+      tags: ['凉拌', '下酒', 'Coles', '手残党', '川味'],
+      ingredients: [
+        { id: 'smoked_pork_knuckle', amount: '1个（约1kg）', optional: false },
+        { id: 'ginger', amount: '3-4片', optional: false },
+        { id: 'garlic', amount: '3瓣', optional: false },
+        { id: 'rice_wine', amount: '少许', optional: false },
+        { id: 'dried_chili', amount: '2-3个', optional: true },
+        { id: 'soy_sauce', amount: '2勺', optional: false },
+        { id: 'vinegar', amount: '1勺', optional: false },
+        { id: 'sugar', amount: '半勺', optional: false },
+        { id: 'spring_onion', amount: '适量', optional: false },
+        { id: 'garlic', amount: '适量（蒜末）', optional: false },
+        { id: 'xiaomi_chili', amount: '适量', optional: true },
+        { id: 'cucumber', amount: '1根', optional: true },
+        { id: 'bean_sprout', amount: '适量', optional: true },
+        { id: 'fungus', amount: '适量', optional: true },
+        { id: 'peanut', amount: '适量', optional: true },
+      ],
+      steps: [
+        {
+          text: '猪肘冷水下锅，加入姜片、蒜、少许米酒和干辣椒（吃辣可加），大火煮开后转中火煮约20分钟',
+          tip: '用筷子戳一下，能轻松穿透就是熟了',
+        },
+        {
+          text: '煮好的猪肘捞出，放凉后放入冰箱冷藏一整夜',
+          tip: '这是肉皮紧实Q弹的秘诀！冷藏后更好切片',
+        },
+        {
+          text: '调凉拌料汁：2勺生抽 + 1勺醋 + 半勺糖 + 葱蒜末 + 小米辣，搅匀',
+          tip: '这个比例是万能凉拌公式，可以按口味微调',
+        },
+        {
+          text: '冷藏好的猪肘取出，切成薄片',
+          tip: '冷藏后非常好切，肉皮Q弹不会散',
+        },
+        {
+          text: '将切好的猪肘片和配菜（黄瓜丝、豆芽、木耳等）放入大碗，倒入料汁拌匀即可',
+          tip: '配菜随意搭配，花生米是点睛之笔',
+        },
+      ],
+      tips: '口感特点：肉质紧实有嚼劲，筋膜部分像蹄筋，肉皮QQ弹弹。综合了卤味和烟熏味，不咸，非常适合下酒。Coles烟熏猪肘约14刀/kg，性价比极高。',
+      xhsReference: '67b5b476000000000d0175f9',
+      xiaohongshuUrl: 'https://www.xiaohongshu.com/explore/67b5b476000000000d0175f9',
+      likes: 0,
+    },
+
     // ==================== 甜点 ====================
     {
       id: 'r008',
