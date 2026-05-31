@@ -2,7 +2,6 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useMemo, useCallback } from 'react';
 import recipesData from '../data/recipes';
 import ingredientsData from '../data/ingredients';
-import specialsData from '../data/specials';
 import categoriesData from '../data/categories';
 
 export default function RecipeDetail() {
@@ -61,27 +60,6 @@ export default function RecipeDetail() {
     });
   };
 
-  // Build a map of ingredient IDs to matching specials (by nameEn fuzzy match)
-  const ingredientSpecialsMap = useMemo(() => {
-    const map = {};
-    recipe.ingredients.forEach(ing => {
-      const detail = ingredientsData.ingredients.find(d => d.id === ing.id);
-      if (!detail) return;
-      const ingNameEn = (detail.nameEn || '').toLowerCase();
-      if (!ingNameEn) return;
-      // Find all specials whose nameEn contains or is contained by this ingredient's nameEn
-      const matches = specialsData.specials.filter(s => {
-        const sNameEn = (s.nameEn || '').toLowerCase();
-        if (!sNameEn) return false;
-        return ingNameEn.includes(sNameEn) || sNameEn.includes(ingNameEn);
-      });
-      if (matches.length > 0) {
-        map[ing.id] = matches;
-      }
-    });
-    return map;
-  }, [recipe.ingredients]);
-
   // Shared ingredient card component (used in both mobile and desktop)
   const IngredientCard = () => (
     <div className="card p-4 sm:p-5 mb-5">
@@ -96,46 +74,17 @@ export default function RecipeDetail() {
       </div>
 
       <div className="space-y-1">
-        {ingredientDetails.map(({ id: ingId, amount, detail }) => {
-          const matches = ingredientSpecialsMap[ingId];
-
-          return (
-            <div key={ingId}>
-              <div className="flex items-center justify-between py-2.5 border-b border-gray-50 px-2 -mx-2">
-                <div className="flex-1">
-                  <div className="font-semibold text-sm text-gray-800">
-                    {detail ? detail.name : ingId}
-                    {detail && <span className="text-gray-400 font-normal ml-1 text-xs">（{detail.nameEn}）</span>}
-                  </div>
-                  <div className="text-xs text-gray-500">{amount}</div>
-                </div>
-                {detail && (
-                  <span className="text-xs text-gray-400">🔍</span>
-                )}
+        {ingredientDetails.map(({ id: ingId, amount, detail }) => (
+          <div key={ingId} className="flex items-center justify-between py-2.5 border-b border-gray-50 px-2 -mx-2">
+            <div className="flex-1">
+              <div className="font-semibold text-sm text-gray-800">
+                {detail ? detail.name : ingId}
+                {detail && <span className="text-gray-400 font-normal ml-1 text-xs">（{detail.nameEn}）</span>}
               </div>
-
-              {/* Show specials info if this ingredient matches any half-price items */}
-              {matches && matches.length > 0 && (
-                <div className="mt-1 ml-2 p-3 bg-red-50 rounded-xl text-xs space-y-2">
-                  <div className="text-red-600 font-bold text-[11px]">🔥 本周半价</div>
-                  {matches.map((s, idx) => (
-                    <div key={idx} className="flex items-center justify-between">
-                      <span className={`font-bold ${s.brand === 'coles' ? 'text-[#E31E24]' : 'text-[#1C7A3C]'}`}>
-                        {s.brand === 'coles' ? 'Coles' : 'Woolies'}
-                      </span>
-                      <div className="text-right">
-                        <span className="text-red-600 font-bold">${s.salePrice?.toFixed(2)}</span>
-                        {s.originalPrice && (
-                          <span className="text-gray-400 line-through ml-1 text-[10px]">${s.originalPrice.toFixed(2)}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="text-xs text-gray-500">{amount}</div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
