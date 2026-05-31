@@ -652,6 +652,20 @@ export default {
         { brand: 'aldi', price: 2.99, product: 'Aldi Tahini' },
       ],
       searchTips: 'International aisle, 找芝麻酱或用Tahini代替' },
+    { id: 'sichuan_pepper_oil', nameZh: '花椒油', nameEn: 'Sichuan Pepper Oil', category: 'pantry', unit: '150ml',
+      stores: [
+        { brand: 'coles', price: 4.50, product: 'Coles Sichuan Pepper Oil' },
+        { brand: 'woolies', price: 4.00, product: 'Woolies Sichuan Pepper Oil' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'International/Asian aisle, 麻辣抄手灵魂调料' },
+    { id: 'dark_soy_sauce', nameZh: '老抽', nameEn: 'Dark Soy Sauce', category: 'pantry', unit: '250ml',
+      stores: [
+        { brand: 'coles', price: 3.00, product: 'Coles Dark Soy Sauce' },
+        { brand: 'woolies', price: 2.80, product: 'Woolies Dark Soy Sauce' },
+        { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
+      ],
+      searchTips: 'International/Asian aisle, 找 "Dark Soy Sauce"，上色用' },
     { id: 'dried_porcini', nameZh: '干牛肝菌', nameEn: 'Dried Porcini Mushrooms', category: 'pantry', unit: '20g',
       stores: [
         { brand: 'coles', price: 0, product: 'Not commonly stocked' },
