@@ -255,6 +255,13 @@ export default {
         { brand: 'aldi', price: 2.99, product: 'Aldi Vegetable Oil' },
       ],
       searchTips: 'Cooking oil aisle' },
+    { id: 'olive_oil', nameZh: '橄榄油', nameEn: 'Extra Virgin Olive Oil', category: 'pantry', unit: '1L',
+      stores: [
+        { brand: 'coles', price: 13.00, product: 'La Espanola Extra Virgin Olive Oil', onSpecial: true, originalPrice: 26.00, specialLabel: '半价' },
+        { brand: 'woolies', price: 14.00, product: 'Woolies Extra Virgin Olive Oil' },
+        { brand: 'aldi', price: 9.99, product: 'Aldi Olive Oil' },
+      ],
+      searchTips: 'Cooking oil aisle, La Espanola 牌子很常见' },
     { id: 'sesame_oil', nameZh: '芝麻油', nameEn: 'Sesame Oil', category: 'pantry', unit: '150ml',
       stores: [
         { brand: 'coles', price: 3.80, product: 'Coles Sesame Oil' },
@@ -285,7 +292,7 @@ export default {
       searchTips: 'Spices aisle' },
     { id: 'chicken_stock', nameZh: '鸡汤块', nameEn: 'Chicken Stock', category: 'pantry', unit: '1L',
       stores: [
-        { brand: 'coles', price: 1.50, product: 'Coles Chicken Stock' },
+        { brand: 'coles', price: 2.25, product: "Campbell's Real Stock Chicken 1L", onSpecial: true, originalPrice: 4.50, specialLabel: '半价' },
         { brand: 'woolies', price: 1.30, product: 'Woolies Chicken Stock' },
         { brand: 'aldi', price: 0.99, product: 'Aldi Chicken Stock' },
       ],
@@ -294,7 +301,7 @@ export default {
     // ==================== 主食 ====================
     { id: 'rice', nameZh: '大米', nameEn: 'Jasmine Rice', category: 'pantry', unit: '5kg',
       stores: [
-        { brand: 'coles', price: 8.00, product: 'Coles Jasmine Rice' },
+        { brand: 'coles', price: 13.50, product: 'Sunrice Jasmine White Rice', onSpecial: true, originalPrice: 27.00, specialLabel: '半价' },
         { brand: 'woolies', price: 7.50, product: 'Woolies Jasmine Rice' },
         { brand: 'aldi', price: 6.99, product: 'Aldi Jasmine Rice' },
       ],
@@ -361,11 +368,11 @@ export default {
       searchTips: 'Frozen food aisle' },
     { id: 'frozen_dumpling', nameZh: '冷冻水饺', nameEn: 'Frozen Dumplings', category: 'frozen', unit: 'pack',
       stores: [
-        { brand: 'coles', price: 6.00, product: 'Coles Frozen Dumplings' },
+        { brand: 'coles', price: 4.25, product: 'Golden Wok Dumplings 230g', onSpecial: true, originalPrice: 8.50, specialLabel: '半价' },
         { brand: 'woolies', price: 5.50, product: 'Woolies Frozen Dumplings' },
         { brand: 'aldi', price: 4.99, product: 'Aldi Frozen Dumplings' },
       ],
-      searchTips: 'Frozen food aisle, international section' },
+      searchTips: 'Frozen food aisle, Golden Wok 系列 Diana Chan 合作款' },
     { id: 'fish_ball', nameZh: '鱼丸', nameEn: 'Fish Balls', category: 'frozen', unit: 'pack',
       stores: [
         { brand: 'coles', price: 5.00, product: 'Coles Fish Balls' },
@@ -505,6 +512,29 @@ export default {
         { brand: 'aldi', price: 0, product: 'Not commonly stocked' },
       ],
       searchTips: 'International aisle, look for vermicelli' },
+
+    // ==================== 调酒/饮品食材 ====================
+    { id: 'coconut_water', nameZh: '椰子水', nameEn: 'Coconut Water', category: 'pantry', unit: '1L',
+      stores: [
+        { brand: 'coles', price: 2.75, product: 'Raw C Pure Natural Coconut Water 1L', onSpecial: true, originalPrice: 5.50, specialLabel: '半价' },
+        { brand: 'woolies', price: 4.50, product: 'Woolies Coconut Water' },
+        { brand: 'aldi', price: 3.49, product: 'Aldi Coconut Water' },
+      ],
+      searchTips: 'Drinks aisle, 做甜品调酒都好用' },
+    { id: 'soda_water', nameZh: '苏打水', nameEn: 'Soda Water', category: 'pantry', unit: '4pk',
+      stores: [
+        { brand: 'coles', price: 4.00, product: 'Schweppes Soda Water Glass 4x300ml', onSpecial: true, originalPrice: 8.00, specialLabel: '半价' },
+        { brand: 'woolies', price: 5.00, product: 'Woolies Soda Water' },
+        { brand: 'aldi', price: 3.99, product: 'Aldi Soda Water' },
+      ],
+      searchTips: 'Drinks/mixers aisle, 调酒必备' },
+    { id: 'frozen_cauliflower', nameZh: '冷冻花椰菜', nameEn: 'Frozen Cauliflower', category: 'frozen', unit: '500g',
+      stores: [
+        { brand: 'coles', price: 2.50, product: 'McCain Cauliflower 500g', onSpecial: true, originalPrice: 5.00, specialLabel: '半价' },
+        { brand: 'woolies', price: 4.00, product: 'Woolies Frozen Cauliflower' },
+        { brand: 'aldi', price: 3.49, product: 'Aldi Frozen Cauliflower' },
+      ],
+      searchTips: 'Frozen food aisle, 炒菜打泥都好用' },
   ],
 
   // 快速查找表：按 id 索引

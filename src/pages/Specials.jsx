@@ -142,10 +142,22 @@ export default function Specials() {
                   {s.brand === 'coles' ? 'Coles' : s.brand === 'woolies' ? 'Woolies' : 'Aldi'}
                 </span>
 
-                {/* Image placeholder */}
-                <div className="h-24 sm:h-36 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl sm:rounded-2xl flex items-center justify-center text-4xl sm:text-6xl mb-2 sm:mb-3">
-                  🛒
-                </div>
+                {/* Image */}
+                {s.image ? (
+                  <div className="h-24 sm:h-36 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center mb-2 sm:mb-3 overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={s.nameZh}
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                      onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<span class="text-4xl sm:text-6xl">🛒</span>'; }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-24 sm:h-36 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl sm:rounded-2xl flex items-center justify-center text-4xl sm:text-6xl mb-2 sm:mb-3">
+                    🛒
+                  </div>
+                )}
 
                 {/* Name */}
                 <h3 className="font-bold text-xs sm:text-sm text-gray-900 mb-1.5 sm:mb-2 line-clamp-2">{s.name}</h3>
