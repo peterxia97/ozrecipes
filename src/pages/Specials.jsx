@@ -545,6 +545,12 @@ export default function Specials() {
                       <span className="text-xl font-extrabold text-primary">${compareProduct.salePrice.toFixed(2)}</span>
                       <span className="text-xs text-gray-400 line-through">${compareProduct.originalPrice.toFixed(2)}</span>
                     </div>
+                    <button
+                      onClick={() => addItem(compareProduct)}
+                      className={`mt-2 text-[11px] font-bold px-3 py-1.5 rounded-lg ${isInList(compareProduct.id) ? 'bg-green-500 text-white' : 'bg-primary text-white hover:bg-primary/90'}`}
+                    >
+                      {isInList(compareProduct.id) ? '✓ 已加清单' : '+ 加入清单'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -586,6 +592,12 @@ export default function Specials() {
                                   {priceDiff === 0 && (
                                     <span className="text-[10px] font-bold text-blue-500">同价</span>
                                   )}
+                                  <button
+                                    onClick={() => addItem(p)}
+                                    className={`block mt-1 text-[10px] font-bold px-2 py-1 rounded ${isInList(p.id) ? 'bg-green-500 text-white' : 'bg-primary text-white'}`}
+                                  >
+                                    {isInList(p.id) ? '✓' : '+'}
+                                  </button>
                                 </div>
                               </div>
                             );
@@ -609,7 +621,15 @@ export default function Specials() {
                                 </span>
                                 <p className="text-xs text-gray-600 truncate">{p.nameEn || p.name}</p>
                               </div>
-                              <span className="text-sm font-extrabold text-primary shrink-0">${p.salePrice.toFixed(2)}</span>
+                              <div className="text-right shrink-0">
+                                <span className="text-sm font-extrabold text-primary">${p.salePrice.toFixed(2)}</span>
+                                <button
+                                  onClick={() => addItem(p)}
+                                  className={`block mt-1 text-[10px] font-bold px-2 py-1 rounded ${isInList(p.id) ? 'bg-green-500 text-white' : 'bg-primary text-white'}`}
+                                >
+                                  {isInList(p.id) ? '✓' : '+'}
+                                </button>
+                              </div>
                             </div>
                           ))}
                         </div>
