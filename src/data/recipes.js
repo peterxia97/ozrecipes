@@ -3,8 +3,7 @@
 
 const BASE = 'https://aussie-recipes.vercel.app/images';
 
-export default {
-  recipes: [
+export default [
     // ==================== 晚餐 ====================
     {
       id: 'r001',
@@ -364,5 +363,4 @@ export default {
       xhsReference: '',
       likes: 423,
     },
-  ]
-};
+];
