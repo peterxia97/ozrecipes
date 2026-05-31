@@ -1,6 +1,8 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import specialsData from '../data/specials';
 import categoriesData from '../data/categories';
+
+const PAGE_SIZE = 50;
 
 const storeTabs = [
   { id: 'all',         name: '全部' },
@@ -15,6 +17,13 @@ export default function Specials() {
   const [sortBy, setSortBy]           = useState('discount');
   const [selectedProduct, setSelectedProduct] = useState(null);   // 大图弹窗
   const [compareProduct, setCompareProduct]   = useState(null);   // 比价弹窗
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // 滚动到顶部用的 ref
+  const gridRef = useRef(null);
+
+  // 切换筛选条件时重置分页
+  useEffect(() => { setCurrentPage(1); }, [activeStore, activeCat, sortBy, searchQuery]);
 
   const filtered = useMemo(() => {
     let list = specialsData.specials;
@@ -53,7 +62,14 @@ export default function Specials() {
     }
 
     return list;
-  }, [activeStore, activeCat, sortBy]);
+  }, [activeStore, activeCat, sortBy, searchQuery]);
+
+  // 分页
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const paged = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filtered.slice(start, start + PAGE_SIZE);
+  }, [filtered, currentPage]);
 
   const storeColor = (store) => {
     if (store === 'coles')      return 'bg-[#E31E24] text-white';
@@ -94,6 +110,65 @@ export default function Specials() {
     const woolies = specialsData.specials.filter(s => (s.store || s.brand) === 'woolworths' || (s.store || s.brand) === 'woolies').length;
     return { coles, woolies, total: specialsData.specials.length };
   }, []);
+
+  // 分页跳转
+  const goToPage = (page) => {
+    setCurrentPage(page);
+    gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // 生成分页按钮
+  const renderPagination = () => {
+    if (totalPages <= 1) return null;
+
+    const pages = [];
+    const maxVisible = 5;
+    let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let end = Math.min(totalPages, start + maxVisible - 1);
+    if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
+
+    if (start > 1) {
+      pages.push(<button key={1} onClick={() => goToPage(1)} className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-100">1</button>);
+      if (start > 2) pages.push(<span key="dots1" className="px-1 text-gray-400">…</span>);
+    }
+    for (let i = start; i <= end; i++) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => goToPage(i)}
+          className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${
+            i === currentPage ? 'bg-primary text-white' : 'text-gray-600 hover:bg-gray-100'
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+    if (end < totalPages) {
+      if (end < totalPages - 1) pages.push(<span key="dots2" className="px-1 text-gray-400">…</span>);
+      pages.push(<button key={totalPages} onClick={() => goToPage(totalPages)} className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-100">{totalPages}</button>);
+    }
+
+    return (
+      <div className="flex items-center justify-center gap-1 mt-6 mb-2">
+        <button
+          onClick={() => goToPage(Math.max(1, currentPage - 1))}
+          disabled={currentPage === 1}
+          className="px-2 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed"
+        >
+          ←
+        </button>
+        {pages}
+        <button
+          onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+          disabled={currentPage === totalPages}
+          className="px-2 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed"
+        >
+          →
+        </button>
+      </div>
+    );
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 sm:py-10">
@@ -180,12 +255,19 @@ export default function Specials() {
         ))}
       </div>
 
-      {/* Results count */}
-      <p className="text-sm text-gray-500 mb-5">
-        共 <span className="text-primary font-bold">{filtered.length}</span> 件特价商品
-      </p>
+      {/* Results count + page info */}
+      <div ref={gridRef} className="flex items-center justify-between mb-5">
+        <p className="text-sm text-gray-500">
+          共 <span className="text-primary font-bold">{filtered.length}</span> 件特价商品
+          {totalPages > 1 && (
+            <span className="ml-1 text-gray-400">
+              · 第 {currentPage}/{totalPages} 页
+            </span>
+          )}
+        </p>
+      </div>
 
-      {/* Specials Grid */}
+      {/* Specials Grid — only render current page */}
       {filtered.length === 0 ? (
         <div className="text-center py-16 text-gray-400">
           <div className="text-5xl mb-4">📭</div>
@@ -193,7 +275,7 @@ export default function Specials() {
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
-          {filtered.map(s => {
+          {paged.map(s => {
             const discount = Math.round((1 - s.salePrice / s.originalPrice) * 100);
             const sStore = s.store || s.brand;
             const sLabel = storeLabel(sStore);
@@ -286,6 +368,9 @@ export default function Specials() {
           })}
         </div>
       )}
+
+      {/* Pagination */}
+      {renderPagination()}
 
       {/* Image Modal (大图查看) */}
       {selectedProduct && (
