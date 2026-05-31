@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import recipesData from '../data/recipes';
 import ingredientsData from '../data/ingredients';
+import specialsData from '../data/specials';
 import categoriesData from '../data/categories';
 
 export default function RecipeDetail() {
@@ -48,6 +49,29 @@ export default function RecipeDetail() {
     });
   };
 
+  // Build a set of ingredient ids that have active specials this week
+  const specialsMap = useMemo(() => {
+    const map = {};
+    const now = new Date().toISOString().split('T')[0];
+    specialsData.specials.forEach(s => {
+      if (s.validFrom <= now && s.validTo >= now) {
+        // Match by ingredient id or by name
+        const key = s.nameEn?.toLowerCase() || '';
+        // Try to match by scanning ingredientsData
+        ingredientsData.ingredients.forEach(ing => {
+          if (ing.prices?.coles || ing.prices?.woolies || ing.prices?.aldi) {
+            // Check if any store entry has a matching specialLabel
+            if (ing.onSpecial || s.discount >= 50) {
+              // Use ingredient id as key
+              map[ing.id] = s;
+            }
+          }
+        });
+      }
+    });
+    return map;
+  }, []);
+
   // Shared ingredient card component (used in both mobile and desktop)
   const IngredientCard = () => (
     <div className="card p-4 sm:p-5 mb-5">
@@ -62,51 +86,79 @@ export default function RecipeDetail() {
       </div>
 
       <div className="space-y-1">
-        {ingredientDetails.map(({ id: ingId, amount, detail }) => (
-          <div key={ingId}>
-            <div
-              className="flex items-center justify-between py-2.5 border-b border-gray-50 cursor-pointer active:bg-gray-50 rounded-lg px-2 -mx-2"
-              onClick={() => detail && toggleIngredient(ingId)}
-            >
-              <div className="flex-1">
-                <div className="font-semibold text-sm text-gray-800">
-                  {detail ? detail.name : ingId}
-                  {detail && <span className="text-gray-400 font-normal ml-1 text-xs">（{detail.nameEn}）</span>}
+        {ingredientDetails.map(({ id: ingId, amount, detail }) => {
+          // Check if this ingredient has a current special
+          const matchingSpecial = detail && specialsData.specials.find(s => {
+            const now = new Date().toISOString().split('T')[0];
+            if (s.validFrom > now || s.validTo < now) return false;
+            // Match by brand + nameEn or by partial name match
+            const ingNameEn = (detail.nameEn || '').toLowerCase();
+            const sNameEn = (s.nameEn || '').toLowerCase();
+            return ingNameEn && sNameEn && (
+              ingNameEn.includes(sNameEn) || sNameEn.includes(ingNameEn)
+            );
+          });
+          const isOnSpecial = detail?.onSpecial || !!matchingSpecial;
+
+          return (
+            <div key={ingId}>
+              <div
+                className="flex items-center justify-between py-2.5 border-b border-gray-50 cursor-pointer active:bg-gray-50 rounded-lg px-2 -mx-2"
+                onClick={() => detail && toggleIngredient(ingId)}
+              >
+                <div className="flex-1">
+                  <div className="font-semibold text-sm text-gray-800 flex items-center gap-1">
+                    {detail ? detail.name : ingId}
+                    {isOnSpecial && (
+                      <span className="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold leading-tight">半价</span>
+                    )}
+                    {detail && <span className="text-gray-400 font-normal ml-1 text-xs">（{detail.nameEn}）</span>}
+                  </div>
+                  <div className="text-xs text-gray-500">{amount}</div>
                 </div>
-                <div className="text-xs text-gray-500">{amount}</div>
+                {detail && (
+                  <span className="text-xs text-primary px-2 py-1">
+                    {showIngredients[ingId] ? '收起 ▲' : '价格 ▼'}
+                  </span>
+                )}
               </div>
-              {detail && (
-                <span className="text-xs text-primary px-2 py-1">
-                  {showIngredients[ingId] ? '收起 ▲' : '价格 ▼'}
-                </span>
+
+              {showIngredients[ingId] && detail && (
+                <div className="mt-1 ml-2 p-3 bg-gray-50 rounded-2xl text-xs space-y-1.5">
+                  {detail.prices.coles && (
+                    <div className="flex justify-between">
+                      <span className="text-[#E31E24] font-bold">Coles</span>
+                      <span className="font-medium">
+                        ${detail.prices.coles.toFixed(2)}
+                        {detail.onSpecial && detail.originalPrice && (
+                          <span className="text-gray-400 line-through ml-1 text-[10px]">${detail.originalPrice.toFixed(2)}</span>
+                        )}
+                      </span>
+                    </div>
+                  )}
+                  {detail.prices.woolies && (
+                    <div className="flex justify-between">
+                      <span className="text-[#1C7A3C] font-bold">Woolies</span>
+                      <span className="font-medium">${detail.prices.woolies.toFixed(2)}</span>
+                    </div>
+                  )}
+                  {detail.prices.aldi && (
+                    <div className="flex justify-between">
+                      <span className="text-[#004C9B] font-bold">Aldi</span>
+                      <span className="font-medium">${detail.prices.aldi.toFixed(2)}</span>
+                    </div>
+                  )}
+                  {isOnSpecial && (
+                    <div className="text-red-500 font-semibold text-[11px] mt-1 pt-1 border-t border-gray-200">
+                      🔥 本周特价！{matchingSpecial?.notes || '半价中，快去买！'}
+                    </div>
+                  )}
+                  <div className="text-gray-400 mt-1 pt-1 border-t border-gray-200">{detail.notes}</div>
+                </div>
               )}
             </div>
-
-            {showIngredients[ingId] && detail && (
-              <div className="mt-1 ml-2 p-3 bg-gray-50 rounded-2xl text-xs space-y-1.5">
-                {detail.prices.coles && (
-                  <div className="flex justify-between">
-                    <span className="text-[#E31E24] font-bold">Coles</span>
-                    <span className="font-medium">${detail.prices.coles.toFixed(2)}</span>
-                  </div>
-                )}
-                {detail.prices.woolies && (
-                  <div className="flex justify-between">
-                    <span className="text-[#1C7A3C] font-bold">Woolies</span>
-                    <span className="font-medium">${detail.prices.woolies.toFixed(2)}</span>
-                  </div>
-                )}
-                {detail.prices.aldi && (
-                  <div className="flex justify-between">
-                    <span className="text-[#004C9B] font-bold">Aldi</span>
-                    <span className="font-medium">${detail.prices.aldi.toFixed(2)}</span>
-                  </div>
-                )}
-                <div className="text-gray-400 mt-1 pt-1 border-t border-gray-200">{detail.notes}</div>
-              </div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

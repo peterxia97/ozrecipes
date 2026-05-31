@@ -14,7 +14,7 @@ export default {
     { id: 'chicken_thigh', nameZh: '鸡腿肉', nameEn: 'Chicken Thigh', category: 'meat', unit: 'kg',
       stores: [
         { brand: 'coles', price: 7.00, product: 'Coles Chicken Thigh Fillet' },
-        { brand: 'woolies', price: 7.50, product: 'Woolies Chicken Thigh' },
+        { brand: 'woolies', price: 6.00, product: 'Woolworths Chicken Thigh Fillet', onSpecial: true, originalPrice: 9.00, specialLabel: '特价' },
         { brand: 'aldi', price: 6.50, product: 'Aldi Chicken Thigh' },
       ],
       searchTips: 'Boneless thigh fillet, poultry section' },
@@ -49,7 +49,7 @@ export default {
     { id: 'salmon_fillet', nameZh: '三文鱼', nameEn: 'Salmon Fillet', category: 'meat', unit: 'kg',
       stores: [
         { brand: 'coles', price: 22.00, product: 'Coles Salmon Fillet' },
-        { brand: 'woolies', price: 20.00, product: 'Woolies Salmon Fillet' },
+        { brand: 'woolies', price: 16.00, product: 'Woolworths Salmon Fillet', onSpecial: true, originalPrice: 22.00, specialLabel: '特价' },
         { brand: 'aldi', price: 18.99, product: 'Aldi Salmon Fillet' },
       ],
       searchTips: 'Seafood section, fresh or frozen' },
@@ -79,7 +79,7 @@ export default {
     { id: 'tomato', nameZh: '番茄', nameEn: 'Tomato', category: 'veggie', unit: 'kg',
       stores: [
         { brand: 'coles', price: 4.90, product: 'Coles Tomatoes' },
-        { brand: 'woolies', price: 4.50, product: 'Woolies Tomatoes' },
+        { brand: 'woolies', price: 3.50, product: 'Woolies Truss Tomatoes 250g', onSpecial: true, originalPrice: 5.90, specialLabel: '特价' },
         { brand: 'aldi', price: 3.99, product: 'Aldi Tomatoes' },
       ],
       searchTips: 'Fresh produce section' },
