@@ -6,11 +6,11 @@ const storeTabs = [
   { id: 'all',         name: '全部' },
   { id: 'coles',       name: 'Coles' },
   { id: 'woolworths',  name: 'Woolies' },
-  { id: 'aldi',        name: 'Aldi' },
 ];
 
 export default function Specials() {
   const [activeStore, setActiveStore] = useState('all');
+  const [searchQuery, setSearchQuery]     = useState('');
   const [activeCat, setActiveCat]     = useState('all');
   const [sortBy, setSortBy]           = useState('discount');
   const [selectedProduct, setSelectedProduct] = useState(null);   // 大图弹窗
@@ -18,6 +18,16 @@ export default function Specials() {
 
   const filtered = useMemo(() => {
     let list = specialsData.specials;
+
+    // 搜索过滤
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter(s => {
+        const nameEn = (s.nameEn || s.name || '').toLowerCase();
+        const nameZh = (s.nameZh || '').toLowerCase();
+        return nameEn.includes(q) || nameZh.includes(q);
+      });
+    }
 
     if (activeStore !== 'all') {
       list = list.filter(s => s.store === activeStore || s.brand === activeStore);
@@ -54,7 +64,7 @@ export default function Specials() {
   const storeLabel = (store) => {
     if (store === 'coles') return 'Coles';
     if (store === 'woolworths' || store === 'woolies') return 'Woolies';
-    return 'Aldi';
+    return store || '';
   };
 
   // 比价：查找同分类的其他超市商品
@@ -90,7 +100,7 @@ export default function Specials() {
       {/* Header */}
       <h1 className="section-title">🔥 本周特价</h1>
       <p className="section-subtitle">
-        数据更新至 {specialsData.currentPeriod.label} · 共 {stats.total} 件商品（Coles {stats.coles} / Woolies {stats.woolies}）
+        数据更新至 {specialsData.currentPeriod.label} ·        共 {stats.total} 件商品（Coles {stats.coles} / Woolies {stats.woolies}）
       </p>
 
       {/* Store Tabs */}
@@ -108,6 +118,27 @@ export default function Specials() {
             {b.name}
           </button>
         ))}
+      </div>
+
+      {/* Search */}
+      <div className="relative mb-5">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          placeholder="搜索商品名称（中英文均可）…"
+          className="w-full pl-10 pr-10 py-2.5 rounded-full border-2 border-gray-200 focus:border-primary focus:outline-none text-sm"
+        />
+        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery('')}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-lg leading-none"
+            title="清除搜索"
+          >
+            ×
+          </button>
+        )}
       </div>
 
       {/* Category — horizontal scroll on mobile */}
