@@ -74,13 +74,13 @@ export default {
         { brand: 'aldi', price: 4.99, product: 'Aldi Bacon' },
       ],
       searchTips: 'Deli section, near ham and cold cuts' },
-    { id: 'smoked_pork_knuckle', nameZh: '烟熏猪肘', nameEn: 'Smoked Pork Knuckle', category: 'meat', unit: 'kg',
+    { id: 'smoked_pork_knuckle', nameZh: '烟熏猪肘', nameEn: 'Smoked Pork Hock', category: 'meat', unit: 'kg',
       stores: [
-        { brand: 'coles', price: 14.00, product: 'Coles Smoked Pork Knuckle' },
+        { brand: 'coles', price: 14.00, product: 'Coles Smoked Pork Hock' },
         { brand: 'woolies', price: 0, product: 'Not commonly stocked' },
-        { brand: 'aldi', price: 12.00, product: 'Aldi Smoked Pork Knuckle' },
+        { brand: 'aldi', price: 12.00, product: 'Aldi Smoked Pork Hock' },
       ],
-      searchTips: 'Meat/Deli section, 烟熏味，适合凉拌卤制' },
+      searchTips: 'Meat/Deli section, 找 "Smoked Pork Hock"，烟熏味，适合凉拌卤制' },
 
     // ==================== 蔬菜 ====================
     { id: 'tomato', nameZh: '番茄', nameEn: 'Tomato', category: 'veggie', unit: 'kg',
