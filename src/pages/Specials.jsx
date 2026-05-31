@@ -11,8 +11,8 @@ const brandTabs = [
 
 export default function Specials() {
   const [activeBrand, setActiveBrand] = useState('all');
-  const [activeCat, setActiveCat]   = useState('all');
-  const [sortBy, setSortBy]         = useState('discount'); // discount | price | name
+  const [activeCat, setActiveCat]      = useState('all');
+  const [sortBy, setSortBy]           = useState('discount');
 
   const filtered = useMemo(() => {
     let list = specialsData.specials;
@@ -50,23 +50,23 @@ export default function Specials() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-8 sm:py-10">
       {/* Header */}
       <h1 className="section-title">🔥 本周特价</h1>
       <p className="section-subtitle">
-        数据更新至 {specialsData.currentPeriod.label} · 手动维护，以超市实际价格为准
+        数据更新至 {specialsData.currentPeriod.label} · 以超市实际价格为准
       </p>
 
       {/* Brand Tabs */}
-      <div className="flex gap-2 mb-6 flex-wrap">
+      <div className="flex gap-2 mb-5 flex-wrap">
         {brandTabs.map(b => (
           <button
             key={b.id}
             onClick={() => setActiveBrand(b.id)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+            className={`px-4 sm:px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
               activeBrand === b.id
                 ? 'bg-primary text-white'
-                : 'bg-white text-gray-600 border-2 border-gray-200 hover:border-primary'
+                : 'bg-white text-gray-600 border-2 border-gray-200 hover:border-primary active:bg-gray-50'
             }`}
           >
             {b.name}
@@ -74,92 +74,93 @@ export default function Specials() {
         ))}
       </div>
 
-      {/* Category + Sort Row */}
-      <div className="flex flex-wrap items-center gap-4 mb-8">
-        <div className="flex flex-wrap gap-2">
+      {/* Category — horizontal scroll on mobile */}
+      <div className="relative -mx-4 px-4 mb-4">
+        <div className="flex gap-2 overflow-x-auto scroll-mobile pb-2">
           {categoriesData.specialCategories.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCat(cat.id)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              className={`shrink-0 px-3 py-2 rounded-full text-xs font-semibold transition-colors whitespace-nowrap ${
                 activeCat === cat.id
                   ? 'bg-secondary text-white'
-                  : 'bg-white text-gray-500 border border-gray-200 hover:border-secondary'
+                  : 'bg-white text-gray-500 border border-gray-200 hover:border-secondary active:bg-gray-50'
               }`}
             >
               {cat.icon} {cat.name}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="ml-auto flex items-center gap-2 text-sm text-gray-500">
-          <span>排序：</span>
-          {[
-            { id: 'discount', label: '折扣最大' },
-            { id: 'price',    label: '价格最低' },
-            { id: 'name',     label: '名称' },
-          ].map(o => (
-            <button
-              key={o.id}
-              onClick={() => setSortBy(o.id)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                sortBy === o.id ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600'
-              }`}
-            >
-              {o.label}
-            </button>
-          ))}
-        </div>
+      {/* Sort — collapsible on mobile */}
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+        <span className="text-xs sm:text-sm text-gray-500">排序：</span>
+        {[
+          { id: 'discount', label: '折扣最大' },
+          { id: 'price',    label: '价格最低' },
+          { id: 'name',     label: '名称' },
+        ].map(o => (
+          <button
+            key={o.id}
+            onClick={() => setSortBy(o.id)}
+            className={`px-3 py-2 rounded-full text-xs font-semibold active:scale-95 ${
+              sortBy === o.id ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600 active:bg-gray-200'
+            }`}
+          >
+            {o.label}
+          </button>
+        ))}
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-gray-500 mb-6">
+      <p className="text-sm text-gray-500 mb-5">
         共 <span className="text-primary font-bold">{filtered.length}</span> 件特价商品
       </p>
 
       {/* Specials Grid */}
       {filtered.length === 0 ? (
-        <div className="text-center py-20 text-gray-400">
+        <div className="text-center py-16 text-gray-400">
           <div className="text-5xl mb-4">📭</div>
           <p>该分类暂无特价商品</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
           {filtered.map(s => {
             const discount = Math.round((1 - s.salePrice / s.originalPrice) * 100);
             return (
-              <div key={s.id} className="card p-4 relative overflow-hidden">
+              <div key={s.id} className="card p-3 sm:p-4 relative overflow-hidden">
                 {/* Hot badge */}
                 {s.isHot && (
-                  <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full z-10">
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded-full z-10">
                     🔥 爆款
                   </div>
                 )}
 
                 {/* Brand badge */}
-                <span className={`inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-3 ${brandColor(s.brand)}`}>
+                <span className={`inline-block text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full mb-2 sm:mb-3 ${brandColor(s.brand)}`}>
                   {s.brand === 'coles' ? 'Coles' : s.brand === 'woolies' ? 'Woolies' : 'Aldi'}
                 </span>
 
                 {/* Image placeholder */}
-                <div className="h-36 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center text-6xl mb-3">
+                <div className="h-24 sm:h-36 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl sm:rounded-2xl flex items-center justify-center text-4xl sm:text-6xl mb-2 sm:mb-3">
                   🛒
                 </div>
 
                 {/* Name */}
-                <h3 className="font-bold text-sm text-gray-900 mb-2 line-clamp-2">{s.name}</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-gray-900 mb-1.5 sm:mb-2 line-clamp-2">{s.name}</h3>
 
                 {/* Price */}
-                <div className="flex items-end gap-2 mb-2">
-                  <span className="text-xl font-extrabold text-primary">
+                <div className="flex items-end gap-1.5 sm:gap-2 mb-1 sm:mb-2 flex-wrap">
+                  <span className="text-base sm:text-xl font-extrabold text-primary">
                     ${s.salePrice.toFixed(2)}
                   </span>
                   {s.originalPrice > s.salePrice && (
                     <>
-                      <span className="text-sm text-gray-400 line-through">
+                      <span className="text-[10px] sm:text-sm text-gray-400 line-through">
                         ${s.originalPrice.toFixed(2)}
                       </span>
-                      <span className="text-xs font-extrabold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] sm:text-xs font-extrabold text-red-500 bg-red-50 px-1 sm:px-1.5 py-0.5 rounded">
                         -{discount}%
                       </span>
                     </>
@@ -168,7 +169,7 @@ export default function Specials() {
 
                 {/* Notes */}
                 {s.notes && (
-                  <p className="text-xs text-gray-400 leading-relaxed">{s.notes}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-400 leading-relaxed line-clamp-2">{s.notes}</p>
                 )}
               </div>
             );
@@ -177,12 +178,12 @@ export default function Specials() {
       )}
 
       {/* Future: Cocktail ingredients teaser */}
-      <div className="mt-14 card bg-gradient-to-r from-purple-50 to-pink-50 p-6 border-2 border-purple-200">
-        <div className="flex items-center gap-3 mb-2">
+      <div className="mt-10 sm:mt-14 card bg-gradient-to-r from-purple-50 to-pink-50 p-4 sm:p-6 border-2 border-purple-200">
+        <div className="flex items-center gap-3">
           <span className="text-3xl">🍸</span>
           <div>
-            <h3 className="font-extrabold text-gray-900">调酒版块即将上线</h3>
-            <p className="text-sm text-gray-500">未来这里也会展示调酒配料（酒、果汁、糖浆等）的超市特价信息 🍹</p>
+            <h3 className="font-extrabold text-sm sm:text-base text-gray-900">调酒版块即将上线</h3>
+            <p className="text-xs sm:text-sm text-gray-500">未来这里也会展示调酒配料的超市特价信息 🍹</p>
           </div>
         </div>
       </div>

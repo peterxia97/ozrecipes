@@ -13,25 +13,64 @@ body {
   background: #FFFAF5;
   color: #1E1E1E;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white font-semibold px-6 py-3 rounded-2xl hover:bg-primary-600 transition-colors;
+    @apply bg-primary text-white font-semibold px-6 py-3 rounded-2xl transition-colors;
   }
+  .btn-primary:hover {
+    @apply bg-primary-600;
+  }
+  .btn-primary:active {
+    @apply bg-primary-700;
+  }
+  .btn-primary:focus {
+    outline: 2px solid #FFB088;
+    outline-offset: 2px;
+  }
+
   .btn-secondary {
-    @apply bg-white text-primary border-2 border-primary font-semibold px-6 py-3 rounded-2xl hover:bg-primary-50 transition-colors;
+    @apply bg-white text-primary border-2 border-primary font-semibold px-6 py-3 rounded-2xl transition-colors;
   }
+  .btn-secondary:hover {
+    @apply bg-primary-50;
+  }
+  .btn-secondary:active {
+    @apply bg-primary-100;
+  }
+  .btn-secondary:focus {
+    outline: 2px solid #FFB088;
+    outline-offset: 2px;
+  }
+
   .card {
-    @apply bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow overflow-hidden;
+    @apply bg-white rounded-3xl shadow-sm overflow-hidden transition-shadow;
   }
+  .card:hover {
+    @apply shadow-md;
+  }
+  .card:active {
+    @apply shadow-sm;
+  }
+
   .tag {
     @apply text-xs font-semibold px-3 py-1 rounded-full;
   }
   .section-title {
-    @apply text-2xl font-extrabold text-gray-900 mb-1;
+    @apply text-xl sm:text-2xl font-extrabold text-gray-900 mb-1;
   }
   .section-subtitle {
     @apply text-sm text-gray-500 mb-6;
   }
+}
+
+/* Mobile-friendly horizontal scrollbar */
+.scroll-mobile {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-mobile::-webkit-scrollbar {
+  display: none;
 }
